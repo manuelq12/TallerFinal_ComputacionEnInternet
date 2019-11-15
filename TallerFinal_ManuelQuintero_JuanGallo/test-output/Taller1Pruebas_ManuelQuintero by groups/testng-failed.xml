@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Taller1Pruebas_ManuelQuintero by groups]">
+  <test name="GRP-BusNotNull(failed)">
+    <groups>
+      <run>
+        <include name="BusNotNull"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="ci.workshop.test.testIntegration.TestIntegrationBusService">
+        <methods>
+          <include name="testPuntoANotNull"/>
+        </methods>
+      </class> <!-- ci.workshop.test.testIntegration.TestIntegrationBusService -->
+      <class name="ci.workshop.test.testUnit.TestBusService">
+        <methods>
+          <include name="inicializarStubs"/>
+        </methods>
+      </class> <!-- ci.workshop.test.testUnit.TestBusService -->
+    </classes>
+  </test> <!-- GRP-BusNotNull(failed) -->
+</suite> <!-- Failed suite [Taller1Pruebas_ManuelQuintero by groups] -->

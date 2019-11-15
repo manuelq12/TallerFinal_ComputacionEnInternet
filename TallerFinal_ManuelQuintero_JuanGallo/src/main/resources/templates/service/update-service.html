@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Service</title>
+</head>
+<body>
+<div>
+<div>
+<form action="#" th:action ="@{/service/edit/{id}(id=${tempHash})}" method = "post" th:object = "${service}">
+<label for = "busId">Bus ID</label>
+<select id = "busId" th:field = "*{idBus}"> 
+<option th:each = "bus:${buses}" th:selected = "${service.idBus = bus.id}" th:value = "${bus.id}" 
+th:text = ${bus.id}></option> </select>
+<label for = "rutaId">Ruta ID</label>
+<select id  = "rutaId" th:field = "*{idRuta}">
+<option th:each = "route:${routes}" th:selected = "${service.idRuta = route.id}" th:value = "${route.id}"
+		th:text = ${route.id}></option>
+</select>
+<label for = "driverId"> Conductor</label>
+<select id  = "driverId" th:field = "*{cedulaConductor}">
+<option th:each = "driver:${drivers}" th:selected = "${service.cedulaConductor = driver.cedula}" 
+				th:value = "${driver.cedula}" th:text = ${driver.nombre}></option>
+</select>
+<label for = "fechaInicio">Fecha Inicio (AAAA/MM/DD)</label>
+<input type = "date" id = "fechaInicio" th:field="*{fechaInicio}">
+<label for = "fechaFin">Fecha Fin (AAAA/MM/DD)</label>
+<input type = "date" id = "fechaFin" th:field="*{fechaFin}">
+<input type="submit" name="action" class="btn btn-primary"
+	value="Update Service">
+</form>
+</div>
+</div>
+</body>
+</html>

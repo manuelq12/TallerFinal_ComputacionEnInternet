@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Driver</title>
+</head>
+<body>
+<div>
+<div>
+<form action = # th:action = "@{/driver/add-driver}" method = "post" th:object = "${driver}">
+<label for = "id">Cedula</label>
+<input type = "text" id = "id" th:field = "*{cedula}">
+<span th:if="${#fields.hasErrors('cedula')}" th:errors="*{cedula}" class="text-danger"></span>
+<label for = "nombre">Nombres</label>
+<input id = "nombre" type  ="text" th:field = "*{nombre}" >
+<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-danger"></span>
+<label for = "apellido">Apellidos</label>
+<input id = "apellido" type = "text" th:field = "*{apellidos}">
+<span th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}" class="text-danger"></span>
+<label for = "fechaCon">Fecha Contratacion</label>
+<input id = "fechaCon" type = "date" th:field = "*{fechaContratacion}">
+<span th:if="${#fields.hasErrors('fechaContratacion')}" th:errors="*{fechaContratacion}" class="text-danger"></span>
+<label for = "fechaNac">Fecha Nacimiento</label>
+<input id = "fechaNac" type = "date" th:field = "*{fechaNacimiento}">
+<span th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento}" class="text-danger"></span>
+<input type="submit" name="action" class="btn btn-primary"
+	value="Add Driver">
+</form>
+</div>
+</div>
+
+</body>
+</html>

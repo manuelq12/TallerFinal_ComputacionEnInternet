@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Servicios</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+<div th:fragment="nav">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<a class="navbar-brand" >MIO</a>
+			
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+							<div sec:authorize="hasRole('admin')">
+								<a class="nav-link" ><i class="fa fa-user-tie"></i> Modo Administrador</a>
+							</div>
+							<div sec:authorize="hasRole('operador')">
+								<a class="nav-link" ><i class="fa fa-user-cog"></i> Modo Operador</a>
+							</div>
+							</li>
+						</ul>
+						<form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+							<button class="btn btn-outline-danger my-2 my-sm-0 btn-sm" type="submit">Logout</button>
+						</form>
+					</div>
+				</nav>
+			</div>
+<div>
+	<div>
+		<div th:switch = "${services}"  class="container my-5">
+			<div class ="row">
+				<div class = "col-md-10">
+					<div>
+					<h2 th:case = "null"> No service yet!</h2>
+						<div th:case = "*">
+							<h2> Services </h2>
+								<table class="table table-striped table-responsive-md">
+								<thead>
+								<tr>
+								<th><b>Hash</b></th>
+								<th><b>BusId</b></th>
+								<th><b>ConductorId</b></th>
+								<th><b>RutaId</b></th>
+								<th><b>Fecha Inicio</b></th>
+								<th><b>Fecha Fin</b></th>
+								<th><b>Editar</b></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr th:each = "service:${services}">
+								<td th:text = "${service.hashId}"></td>
+								<td th:text = "${service.idBus}"></td>
+								<td th:text = "${service.cedulaConductor}"></td>
+								<td th:text = "${service.idRuta}"></td>
+								<td th:text = "${service.fechaInicio}"></td>
+								<td th:text = "${service.fechaFin}"></td>
+								<td sec:authorize="hasRole('operador')"><a th:href="@{/service/edit/{id}(id=${service.hashId})}"
+									class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
+								</tr>
+								</tbody>
+								</table>
+						</div>
+							<div>
+							<h4> Back to  Search by Date</h4>
+							<a th:href="@{/service/dates}"
+								class="btn btn-primary"><i class="fas fa-calendar"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				<a href="/"><i class="fas fa-home ml-2"></i> Go back to main</a>
+ 	</div>
+</body>
+</html>

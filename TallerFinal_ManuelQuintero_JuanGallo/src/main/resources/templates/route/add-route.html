@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Route</title>
+</head>
+<body>
+<div>
+<div>
+<form action = #  th:action = "@{/route/add-route}" method = "post" th:object  ="${route}">
+<label for = "id">ID</label>
+<input type = "hidden" id = "id">
+<label for = "estado">Estado</label>
+<select id = "estado" th:field = "*{activa}">
+<option th:each = "state:${states}" th:selected = "${route.activa = state}" th:value = "${state}"
+		th:text = "${state}"></option>
+</select>
+<span th:if="${#fields.hasErrors('activa')}" th:errors="*{activa}" class="text-danger"></span>
+
+<label for = "descrip">Description</label>
+<input id = "descrip" type = "text" th:field = "*{descripcion}">
+<span th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" class="text-danger"></span>
+
+<label for = "diaInicio">Dia Inicio(1-7)</label>
+<input id = "diaInicio" type = "number" th:field = "*{diaInicio}">
+<span th:if="${#fields.hasErrors('diaInicio')}" th:errors="*{diaInicio}" class="text-danger"></span>
+
+<label for = "diaFin">Dia Fin(1-7)</label>
+<input id = "diaFin" type = "number" th:field = "*{diaFin}">
+<span th:if="${#fields.hasErrors('diaFin')}" th:errors="*{diaFin}" class="text-danger"></span>
+
+<label for = "horaInicio">Hora Inicio (seg)</label>
+<input id = "horaInicio" type = "number" th:field = "*{horaInicio}">
+<span th:if="${#fields.hasErrors('horaInicio')}" th:errors="*{horaInicio}" class="text-danger"></span>
+
+<label for = "horaFin">Hora Fin(seg)</label>
+<input id = "horaFin" type = "number" th:field = "*{horaFin}">
+<span th:if="${#fields.hasErrors('horaFin')}" th:errors="*{horaFin}" class="text-danger"></span>
+
+<label for = "number">Numero</label>
+<input id = "number" type = "text" th:field = "*{numero}">
+<span th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}" class="text-danger"></span>
+
+<input type = "submit"  name="action" class="btn btn-primary"
+	value="Add Route" >
+</form>
+</div>
+</div>
+</body>
+</html>

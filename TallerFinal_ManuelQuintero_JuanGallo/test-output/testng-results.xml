@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="20" passed="20">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="3220" started-at="2019-09-25T03:19:40Z" finished-at="2019-09-25T03:19:43Z">
+    <groups>
+      <group name="Hora">
+        <method signature="TestIntegrationRutaService.testFechaHora()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="testFechaHora" class="ci.workshop.test.testIntegration.TestIntegrationRutaService"/>
+        <method signature="TestRutaService.testFechaHora()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="testFechaHora" class="ci.workshop.test.testUnit.TestRutaService"/>
+      </group> <!-- Hora -->
+      <group name="Fechas">
+        <method signature="TestConductorService.testDate()[pri:0, instance:ci.workshop.test.testUnit.TestConductorService@43bc63a3]" name="testDate" class="ci.workshop.test.testUnit.TestConductorService"/>
+        <method signature="TestIntegrationConductorService.testDate()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="testDate" class="ci.workshop.test.testIntegration.TestIntegrationConductorService"/>
+      </group> <!-- Fechas -->
+      <group name="PuntoD">
+        <method signature="TestIntegrationServicioServicePuntoD.testPuntoD()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="testPuntoD" class="ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD"/>
+        <method signature="TestServicioServicePuntoD.testPuntoD()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoD@34e9fd99]" name="testPuntoD" class="ci.workshop.test.testUnit.TestServicioServicePuntoD"/>
+      </group> <!-- PuntoD -->
+      <group name="PuntoE">
+        <method signature="TestIntegrationServicioServicePuntoE.testPuntoE()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="testPuntoE" class="ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE"/>
+        <method signature="TestServicioServicePuntoE.testPuntoE()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoE@45752059]" name="testPuntoE" class="ci.workshop.test.testUnit.TestServicioServicePuntoE"/>
+      </group> <!-- PuntoE -->
+      <group name="BusTipo">
+        <method signature="TestBusService.testPuntoATipo()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="testPuntoATipo" class="ci.workshop.test.testUnit.TestBusService"/>
+        <method signature="TestIntegrationBusService.testPuntoATipo()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="testPuntoATipo" class="ci.workshop.test.testIntegration.TestIntegrationBusService"/>
+      </group> <!-- BusTipo -->
+      <group name="BusCapacidad">
+        <method signature="TestBusService.testPuntoACapacidad()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="testPuntoACapacidad" class="ci.workshop.test.testUnit.TestBusService"/>
+        <method signature="TestIntegrationBusService.testPuntoACapacidad()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="testPuntoACapacidad" class="ci.workshop.test.testIntegration.TestIntegrationBusService"/>
+      </group> <!-- BusCapacidad -->
+      <group name="NotNull">
+        <method signature="TestConductorService.testNotNull()[pri:0, instance:ci.workshop.test.testUnit.TestConductorService@43bc63a3]" name="testNotNull" class="ci.workshop.test.testUnit.TestConductorService"/>
+        <method signature="TestIntegrationConductorService.testNotNull()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="testNotNull" class="ci.workshop.test.testIntegration.TestIntegrationConductorService"/>
+        <method signature="TestIntegrationRutaService.testNotNull()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="testNotNull" class="ci.workshop.test.testIntegration.TestIntegrationRutaService"/>
+        <method signature="TestRutaService.testNotNull()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="testNotNull" class="ci.workshop.test.testUnit.TestRutaService"/>
+      </group> <!-- NotNull -->
+      <group name="Dia">
+        <method signature="TestIntegrationRutaService.testFechaDia()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="testFechaDia" class="ci.workshop.test.testIntegration.TestIntegrationRutaService"/>
+        <method signature="TestRutaService.testFechaDia()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="testFechaDia" class="ci.workshop.test.testUnit.TestRutaService"/>
+      </group> <!-- Dia -->
+      <group name="BusNotNull">
+        <method signature="TestBusService.testPuntoANotNull()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="testPuntoANotNull" class="ci.workshop.test.testUnit.TestBusService"/>
+        <method signature="TestIntegrationBusService.testPuntoANotNull()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="testPuntoANotNull" class="ci.workshop.test.testIntegration.TestIntegrationBusService"/>
+      </group> <!-- BusNotNull -->
+    </groups>
+    <test name="Default test" duration-ms="3220" started-at="2019-09-25T03:19:40Z" finished-at="2019-09-25T03:19:43Z">
+      <class name="ci.workshop.test.testIntegration.TestIntegrationConductorService">
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="30" started-at="2019-09-24T22:19:43Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="testDate()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="testDate" duration-ms="7" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDate -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testDate()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testDate()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="testNotNull()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="testNotNull" duration-ms="3" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNotNull -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testNotNull()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testNotNull()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationConductorService@6a6cb05c]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- ci.workshop.test.testIntegration.TestIntegrationConductorService -->
+      <class name="ci.workshop.test.testIntegration.TestIntegrationRutaService">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="6" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="1806" started-at="2019-09-24T22:19:41Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="3" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaDia()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testFechaDia()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="testFechaDia" duration-ms="16" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFechaDia -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaDia()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaHora()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testFechaHora()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="testFechaHora" duration-ms="5" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFechaHora -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaHora()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="testNotNull()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="testNotNull" duration-ms="7" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNotNull -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testNotNull()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testNotNull()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationRutaService@702657cc]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- ci.workshop.test.testIntegration.TestIntegrationRutaService -->
+      <class name="ci.workshop.test.testUnit.TestRutaService">
+        <test-method status="PASS" signature="testFechaDia()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="testFechaDia" duration-ms="4" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFechaDia -->
+        <test-method status="PASS" signature="testFechaHora()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="testFechaHora" duration-ms="3" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFechaHora -->
+        <test-method status="PASS" signature="testNotNull()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="testNotNull" duration-ms="8" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNotNull -->
+      </class> <!-- ci.workshop.test.testUnit.TestRutaService -->
+      <class name="ci.workshop.test.testUnit.TestServicioServicePuntoE">
+        <test-method status="PASS" signature="testPuntoE()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoE@45752059]" name="testPuntoE" duration-ms="15" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoE -->
+      </class> <!-- ci.workshop.test.testUnit.TestServicioServicePuntoE -->
+      <class name="ci.workshop.test.testUnit.TestServicioServicePuntoD">
+        <test-method status="PASS" signature="testPuntoD()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoD@34e9fd99]" name="testPuntoD" duration-ms="3" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoD -->
+      </class> <!-- ci.workshop.test.testUnit.TestServicioServicePuntoD -->
+      <class name="ci.workshop.test.testUnit.TestBusService">
+        <test-method status="PASS" signature="inicializarStubs()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="inicializarStubs" is-config="true" duration-ms="18" started-at="2019-09-24T22:19:40Z" finished-at="2019-09-24T22:19:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicializarStubs -->
+        <test-method status="PASS" signature="initMocks()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="initMocks" is-config="true" duration-ms="995" started-at="2019-09-24T22:19:40Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initMocks -->
+        <test-method status="PASS" signature="inicializarStub()[pri:0, instance:ci.workshop.test.testUnit.TestConductorService@43bc63a3]" name="inicializarStub" is-config="true" duration-ms="2" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicializarStub -->
+        <test-method status="PASS" signature="initMocks()[pri:0, instance:ci.workshop.test.testUnit.TestConductorService@43bc63a3]" name="initMocks" is-config="true" duration-ms="31" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initMocks -->
+        <test-method status="PASS" signature="ingresarValoresPruebaPuntoD()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="ingresarValoresPruebaPuntoD" is-config="true" duration-ms="3" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ingresarValoresPruebaPuntoD -->
+        <test-method status="PASS" signature="ingresarValoresPruebaPuntoE()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="ingresarValoresPruebaPuntoE" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ingresarValoresPruebaPuntoE -->
+        <test-method status="PASS" signature="inicializarStub()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="inicializarStub" is-config="true" duration-ms="3" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicializarStub -->
+        <test-method status="PASS" signature="initMocks()[pri:0, instance:ci.workshop.test.testUnit.TestRutaService@36ebc363]" name="initMocks" is-config="true" duration-ms="27" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initMocks -->
+        <test-method status="PASS" signature="ingresarValoresPruebaPuntoD()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoD@34e9fd99]" name="ingresarValoresPruebaPuntoD" is-config="true" duration-ms="2" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ingresarValoresPruebaPuntoD -->
+        <test-method status="PASS" signature="inicializarStubD()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoD@34e9fd99]" name="inicializarStubD" is-config="true" duration-ms="3" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicializarStubD -->
+        <test-method status="PASS" signature="inicializarStubE()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoE@45752059]" name="inicializarStubE" is-config="true" duration-ms="2" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicializarStubE -->
+        <test-method status="PASS" signature="ingresarValoresPruebaPuntoE()[pri:0, instance:ci.workshop.test.testUnit.TestServicioServicePuntoE@45752059]" name="ingresarValoresPruebaPuntoE" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:41Z" finished-at="2019-09-24T22:19:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ingresarValoresPruebaPuntoE -->
+        <test-method status="PASS" signature="testPuntoACapacidad()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="testPuntoACapacidad" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoACapacidad -->
+        <test-method status="PASS" signature="testPuntoANotNull()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="testPuntoANotNull" duration-ms="3" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoANotNull -->
+        <test-method status="PASS" signature="testPuntoATipo()[pri:0, instance:ci.workshop.test.testUnit.TestBusService@3c41ed1d]" name="testPuntoATipo" duration-ms="5" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoATipo -->
+      </class> <!-- ci.workshop.test.testUnit.TestBusService -->
+      <class name="ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD">
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="11" started-at="2019-09-24T22:19:43Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD.testPuntoD()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testPuntoD()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="testPuntoD" duration-ms="2" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoD -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD.testPuntoD()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD@54d9d12d]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD -->
+      <class name="ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="8" started-at="2019-09-24T22:19:43Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="testPuntoE()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="testPuntoE" duration-ms="2" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoE -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE.testPuntoE()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE.testPuntoE()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE@38425407]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE -->
+      <class name="ci.workshop.test.testUnit.TestConductorService">
+        <test-method status="PASS" signature="testDate()[pri:0, instance:ci.workshop.test.testUnit.TestConductorService@43bc63a3]" name="testDate" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDate -->
+        <test-method status="PASS" signature="testNotNull()[pri:0, instance:ci.workshop.test.testUnit.TestConductorService@43bc63a3]" name="testNotNull" duration-ms="2" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNotNull -->
+      </class> <!-- ci.workshop.test.testUnit.TestConductorService -->
+      <class name="ci.workshop.test.testIntegration.TestIntegrationBusService">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="13" started-at="2019-09-24T22:19:43Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoACapacidad()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testPuntoACapacidad()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="testPuntoACapacidad" duration-ms="3" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoACapacidad -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoACapacidad()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="testPuntoANotNull()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="testPuntoANotNull" duration-ms="2" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoANotNull -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoANotNull()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoANotNull()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoATipo()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="testPuntoATipo()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="testPuntoATipo" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPuntoATipo -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoATipo()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:ci.workshop.test.testIntegration.TestIntegrationBusService@40a4337a]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2019-09-24T22:19:43Z" finished-at="2019-09-24T22:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- ci.workshop.test.testIntegration.TestIntegrationBusService -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

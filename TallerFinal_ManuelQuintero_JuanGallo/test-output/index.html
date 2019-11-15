@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-passed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>C:\Users\mapac\AppData\Local\Temp\testng-eclipse--348611240\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                    <span>9 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">20 methods,   20 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationConductorService" hash-for-method="testDate">testDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestConductorService" hash-for-method="testDate">testDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestRutaService" hash-for-method="testFechaDia">testFechaDia</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationRutaService" hash-for-method="testFechaDia">testFechaDia</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationRutaService" hash-for-method="testFechaHora">testFechaHora</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestRutaService" hash-for-method="testFechaHora">testFechaHora</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestRutaService" hash-for-method="testNotNull">testNotNull</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestConductorService" hash-for-method="testNotNull">testNotNull</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationRutaService" hash-for-method="testNotNull">testNotNull</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationConductorService" hash-for-method="testNotNull">testNotNull</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationBusService" hash-for-method="testPuntoACapacidad">testPuntoACapacidad</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestBusService" hash-for-method="testPuntoACapacidad">testPuntoACapacidad</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationBusService" hash-for-method="testPuntoANotNull">testPuntoANotNull</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestBusService" hash-for-method="testPuntoANotNull">testPuntoANotNull</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestBusService" hash-for-method="testPuntoATipo">testPuntoATipo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationBusService" hash-for-method="testPuntoATipo">testPuntoATipo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestServicioServicePuntoD" hash-for-method="testPuntoD">testPuntoD</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD" hash-for-method="testPuntoD">testPuntoD</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE" hash-for-method="testPuntoE">testPuntoE</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ci.workshop.test.testUnit.TestServicioServicePuntoE" hash-for-method="testPuntoE">testPuntoE</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoD">
+                  </a> <!-- testPuntoD -->
+                  <span class="method-name">testPuntoD</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testUnit.TestRutaService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFechaDia">
+                  </a> <!-- testFechaDia -->
+                  <span class="method-name">testFechaDia</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFechaHora">
+                  </a> <!-- testFechaHora -->
+                  <span class="method-name">testFechaHora</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNotNull">
+                  </a> <!-- testNotNull -->
+                  <span class="method-name">testNotNull</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testIntegration.TestIntegrationBusService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoACapacidad">
+                  </a> <!-- testPuntoACapacidad -->
+                  <span class="method-name">testPuntoACapacidad</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoANotNull">
+                  </a> <!-- testPuntoANotNull -->
+                  <span class="method-name">testPuntoANotNull</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoATipo">
+                  </a> <!-- testPuntoATipo -->
+                  <span class="method-name">testPuntoATipo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testIntegration.TestIntegrationConductorService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDate">
+                  </a> <!-- testDate -->
+                  <span class="method-name">testDate</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNotNull">
+                  </a> <!-- testNotNull -->
+                  <span class="method-name">testNotNull</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testUnit.TestConductorService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDate">
+                  </a> <!-- testDate -->
+                  <span class="method-name">testDate</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNotNull">
+                  </a> <!-- testNotNull -->
+                  <span class="method-name">testNotNull</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testIntegration.TestIntegrationRutaService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFechaDia">
+                  </a> <!-- testFechaDia -->
+                  <span class="method-name">testFechaDia</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFechaHora">
+                  </a> <!-- testFechaHora -->
+                  <span class="method-name">testFechaHora</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNotNull">
+                  </a> <!-- testNotNull -->
+                  <span class="method-name">testNotNull</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testUnit.TestServicioServicePuntoD</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoD">
+                  </a> <!-- testPuntoD -->
+                  <span class="method-name">testPuntoD</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testUnit.TestBusService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoACapacidad">
+                  </a> <!-- testPuntoACapacidad -->
+                  <span class="method-name">testPuntoACapacidad</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoANotNull">
+                  </a> <!-- testPuntoANotNull -->
+                  <span class="method-name">testPuntoANotNull</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoATipo">
+                  </a> <!-- testPuntoATipo -->
+                  <span class="method-name">testPuntoATipo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoE">
+                  </a> <!-- testPuntoE -->
+                  <span class="method-name">testPuntoE</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ci.workshop.test.testUnit.TestServicioServicePuntoE</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPuntoE">
+                  </a> <!-- testPuntoE -->
+                  <span class="method-name">testPuntoE</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\mapac\AppData\Local\Temp\testng-eclipse--348611240\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;ci.workshop.test.testIntegration.TestIntegrationRutaService&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testIntegration.TestIntegrationConductorService&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testUnit.TestRutaService&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testUnit.TestServicioServicePuntoE&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testUnit.TestServicioServicePuntoD&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testUnit.TestBusService&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testUnit.TestConductorService&quot;/&gt;
+      &lt;class name=&quot;ci.workshop.test.testIntegration.TestIntegrationBusService&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (10 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">BusCapacidad</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testPuntoACapacidad</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">BusNotNull</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testPuntoANotNull</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">BusTipo</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testPuntoATipo</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Dia</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testFechaDia</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Fechas</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testDate</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Hora</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testFechaHora</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">NotNull</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testNotNull</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">PuntoD</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testPuntoD</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">PuntoE</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testPuntoE</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(20);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testFechaDia')
+data.setCell(0, 2, 'ci.workshop.test.testIntegration.TestIntegrationRutaService')
+data.setCell(0, 3, 16);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testPuntoE')
+data.setCell(1, 2, 'ci.workshop.test.testUnit.TestServicioServicePuntoE')
+data.setCell(1, 3, 15);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testNotNull')
+data.setCell(2, 2, 'ci.workshop.test.testUnit.TestRutaService')
+data.setCell(2, 3, 8);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testDate')
+data.setCell(3, 2, 'ci.workshop.test.testIntegration.TestIntegrationConductorService')
+data.setCell(3, 3, 7);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testNotNull')
+data.setCell(4, 2, 'ci.workshop.test.testIntegration.TestIntegrationRutaService')
+data.setCell(4, 3, 7);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testPuntoATipo')
+data.setCell(5, 2, 'ci.workshop.test.testUnit.TestBusService')
+data.setCell(5, 3, 5);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testFechaHora')
+data.setCell(6, 2, 'ci.workshop.test.testIntegration.TestIntegrationRutaService')
+data.setCell(6, 3, 5);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testFechaDia')
+data.setCell(7, 2, 'ci.workshop.test.testUnit.TestRutaService')
+data.setCell(7, 3, 4);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testPuntoD')
+data.setCell(8, 2, 'ci.workshop.test.testUnit.TestServicioServicePuntoD')
+data.setCell(8, 3, 3);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testPuntoACapacidad')
+data.setCell(9, 2, 'ci.workshop.test.testIntegration.TestIntegrationBusService')
+data.setCell(9, 3, 3);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testNotNull')
+data.setCell(10, 2, 'ci.workshop.test.testIntegration.TestIntegrationConductorService')
+data.setCell(10, 3, 3);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testPuntoANotNull')
+data.setCell(11, 2, 'ci.workshop.test.testUnit.TestBusService')
+data.setCell(11, 3, 3);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testFechaHora')
+data.setCell(12, 2, 'ci.workshop.test.testUnit.TestRutaService')
+data.setCell(12, 3, 3);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testNotNull')
+data.setCell(13, 2, 'ci.workshop.test.testUnit.TestConductorService')
+data.setCell(13, 3, 2);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testPuntoANotNull')
+data.setCell(14, 2, 'ci.workshop.test.testIntegration.TestIntegrationBusService')
+data.setCell(14, 3, 2);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testPuntoE')
+data.setCell(15, 2, 'ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE')
+data.setCell(15, 3, 2);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testPuntoD')
+data.setCell(16, 2, 'ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD')
+data.setCell(16, 3, 2);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'testDate')
+data.setCell(17, 2, 'ci.workshop.test.testUnit.TestConductorService')
+data.setCell(17, 3, 1);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'testPuntoATipo')
+data.setCell(18, 2, 'ci.workshop.test.testIntegration.TestIntegrationBusService')
+data.setCell(18, 3, 1);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'testPuntoACapacidad')
+data.setCell(19, 2, 'ci.workshop.test.testUnit.TestBusService')
+data.setCell(19, 3, 1);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 93 ms</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestBusService</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">inicializarStubs</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-test before">
+                <span class="method-name">initMocks</span>
+                <span class="method-start">18 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestConductorService</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">inicializarStub</span>
+                <span class="method-start">1013 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-test before">
+                <span class="method-name">initMocks</span>
+                <span class="method-start">1015 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">ingresarValoresPruebaPuntoD</span>
+                <span class="method-start">1046 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">ingresarValoresPruebaPuntoE</span>
+                <span class="method-start">1049 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestRutaService</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">inicializarStub</span>
+                <span class="method-start">1049 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-test before">
+                <span class="method-name">initMocks</span>
+                <span class="method-start">1052 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestServicioServicePuntoD</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">ingresarValoresPruebaPuntoD</span>
+                <span class="method-start">1079 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-test before">
+                <span class="method-name">inicializarStubD</span>
+                <span class="method-start">1081 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestServicioServicePuntoE</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">ingresarValoresPruebaPuntoE</span>
+                <span class="method-start">1084 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-test before">
+                <span class="method-name">inicializarStubE</span>
+                <span class="method-start">1084 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testIntegration.TestIntegrationRutaService</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextBeforeTestClass</span>
+                <span class="method-start">1095 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextPrepareTestInstance</span>
+                <span class="method-start">1101 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaDia())</span>
+                <span class="method-start">2927 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testFechaDia</span>
+                <span class="method-start">2930 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaDia())</span>
+                <span class="method-start">2950 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaHora())</span>
+                <span class="method-start">2952 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testFechaHora</span>
+                <span class="method-start">2953 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testFechaHora())</span>
+                <span class="method-start">2969 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testNotNull())</span>
+                <span class="method-start">2970 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testNotNull</span>
+                <span class="method-start">2970 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationRutaService.testNotNull())</span>
+                <span class="method-start">2988 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">2989 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testIntegration.TestIntegrationConductorService</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextBeforeTestClass</span>
+                <span class="method-start">2993 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextPrepareTestInstance</span>
+                <span class="method-start">2993 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testDate())</span>
+                <span class="method-start">3023 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testDate</span>
+                <span class="method-start">3023 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testDate())</span>
+                <span class="method-start">3042 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testNotNull())</span>
+                <span class="method-start">3044 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testNotNull</span>
+                <span class="method-start">3044 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationConductorService.testNotNull())</span>
+                <span class="method-start">3052 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">3055 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestRutaService</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testFechaDia</span>
+                <span class="method-start">3056 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testFechaHora</span>
+                <span class="method-start">3069 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testNotNull</span>
+                <span class="method-start">3079 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestServicioServicePuntoE</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testPuntoE</span>
+                <span class="method-start">3091 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestServicioServicePuntoD</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testPuntoD</span>
+                <span class="method-start">3116 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestBusService</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testPuntoACapacidad</span>
+                <span class="method-start">3122 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testPuntoANotNull</span>
+                <span class="method-start">3127 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testPuntoATipo</span>
+                <span class="method-start">3132 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextBeforeTestClass</span>
+                <span class="method-start">3143 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextPrepareTestInstance</span>
+                <span class="method-start">3143 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD.testPuntoD())</span>
+                <span class="method-start">3154 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testPuntoD</span>
+                <span class="method-start">3155 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoD.testPuntoD())</span>
+                <span class="method-start">3159 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">3161 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextBeforeTestClass</span>
+                <span class="method-start">3161 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextPrepareTestInstance</span>
+                <span class="method-start">3162 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE.testPuntoE())</span>
+                <span class="method-start">3171 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testPuntoE</span>
+                <span class="method-start">3171 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">3174 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationServicioServicePuntoE.testPuntoE())</span>
+                <span class="method-start">3174 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testUnit.TestConductorService</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testDate</span>
+                <span class="method-start">3175 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testNotNull</span>
+                <span class="method-start">3178 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ci.workshop.test.testIntegration.TestIntegrationBusService</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextBeforeTestClass</span>
+                <span class="method-start">3181 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">springTestContextPrepareTestInstance</span>
+                <span class="method-start">3182 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoACapacidad())</span>
+                <span class="method-start">3196 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testPuntoACapacidad</span>
+                <span class="method-start">3197 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoACapacidad())</span>
+                <span class="method-start">3201 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoANotNull())</span>
+                <span class="method-start">3203 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testPuntoANotNull</span>
+                <span class="method-start">3203 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoANotNull())</span>
+                <span class="method-start">3206 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">springTestContextBeforeTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoATipo())</span>
+                <span class="method-start">3207 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testPuntoATipo</span>
+                <span class="method-start">3207 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void ci.workshop.test.testIntegration.TestIntegrationBusService.testPuntoATipo())</span>
+                <span class="method-start">3210 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">3211 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
