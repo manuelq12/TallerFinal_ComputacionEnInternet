@@ -32,7 +32,6 @@ public class Tmio1SitiosRuta implements Serializable {
 	@JoinColumn(name="id_sitio", insertable=false, updatable=false)
 	private Tmio1Sitio tmio1Sitio1;
 
-	//bi-directional many-to-one association to Tmio1Sitio
 	@ManyToOne
 	@JoinColumn(name="id_sitio", insertable=false, updatable=false)
 	private Tmio1Sitio tmio1Sitio2;

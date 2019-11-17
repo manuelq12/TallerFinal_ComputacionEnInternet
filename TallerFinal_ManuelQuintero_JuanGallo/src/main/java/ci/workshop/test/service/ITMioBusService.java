@@ -8,5 +8,6 @@ public interface ITMioBusService {
 	public boolean validNewBus(Tmio1Bus bus);
 	public Iterable<Tmio1Bus> findAll();
 	public Iterable<String> findAllTypes();
+	public Tmio1Bus findById(int id);
 	
 }

@@ -73,6 +73,11 @@ public class TMioBusService implements ITMioBusService{
 		return (Iterable<String>) types;
 	}
 
+	@Override
+	public Tmio1Bus findById(int id) {
+		return busDao.findById(id);
+	}
+
 	
 
 }
