@@ -53,7 +53,7 @@ public class SitioRutaDelegate {
 	public String updateSitio(Tmio1SitiosRuta nuevo) {
 		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitioRuta/update", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
+			response= rest.exchange(REST_URI+"/sitioRuta/update", HttpMethod.PATCH,null, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
