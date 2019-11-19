@@ -21,7 +21,7 @@ import ci.workshop.test.repository.RutasRepository;
 import ci.workshop.test.service.UserService;
 
 @SpringBootApplication
-public class Taller3JPAManuelQuinteroApplication {
+public class TallerFinalManuelQuinteroJuanGalloApplication {
 	@Bean
 	public Java8TimeDialect java8TimeDialect() {
 		return new Java8TimeDialect();
@@ -31,7 +31,7 @@ public class Taller3JPAManuelQuinteroApplication {
 	private UserService userService;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Taller3JPAManuelQuinteroApplication.class, args);
+		SpringApplication.run(TallerFinalManuelQuinteroJuanGalloApplication.class, args);
 	}
 
 	@Bean

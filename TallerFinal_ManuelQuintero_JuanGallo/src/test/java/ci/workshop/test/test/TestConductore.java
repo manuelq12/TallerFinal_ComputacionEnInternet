@@ -19,14 +19,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import ci.workshop.test.Taller3JPAManuelQuinteroApplication;
+import ci.workshop.test.TallerFinalManuelQuinteroJuanGalloApplication;
 import ci.workshop.test.dao.IConductoresDao;
 import ci.workshop.test.model.Tmio1Bus;
 import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.model.Tmio1Servicio;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Taller3JPAManuelQuinteroApplication.class)
+@SpringBootTest(classes = TallerFinalManuelQuinteroJuanGalloApplication.class)
 @Rollback(false)
 public class TestConductore {
 	@Autowired

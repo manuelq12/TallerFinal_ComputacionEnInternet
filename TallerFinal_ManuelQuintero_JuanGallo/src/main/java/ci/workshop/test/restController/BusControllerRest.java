@@ -1,4 +1,4 @@
-package ci.workshop.test.restController;
+package ci.workshop.test.restcontroller;
 
 
 import java.net.URI;

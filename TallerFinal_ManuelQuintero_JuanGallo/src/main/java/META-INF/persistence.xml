@@ -12,15 +12,5 @@
 		<class>ci.workshop.test.model.TMio1Sitio</class>
 		<class>ci.workshop.test.model.TMio1SitioRuta</class>
 		<class>ci.workshop.test.model.TMio1SitioRutaPK</class>
-
-
-		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:49926/pg_estud"/>
-			<property name="javax.persistence.jdbc.user" value="postgres"/>
-			<property name="javax.persistence.jdbc.password" value="postgres"/>
-			<property name="hibernate.show_sql" value="true"/>
-			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-			
-		</properties>
 	</persistence-unit>
 </persistence>

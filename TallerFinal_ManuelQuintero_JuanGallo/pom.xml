@@ -11,8 +11,8 @@
 	<groupId>ci.192.workshop.test</groupId>
 	<artifactId>Taller1Pruebas_ManuelQuintero</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Taller2Thymeleaf_ManuelQuintero</name>
-	<description>Taller de Thymeleaf</description>
+	<name>TallerFinal_ManuelQuintero_JuanGallo</name>
+	<description>Taller Final - Computancion en la Web</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -78,16 +78,11 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-				<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+  	<dependency>
+  		<groupId>org.postgresql</groupId>
+  		<artifactId>postgresql</artifactId>
+  		<version>42.2.1</version>
+  	</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
