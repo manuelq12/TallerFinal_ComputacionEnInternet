@@ -7,5 +7,5 @@ public interface ITMioConductorService {
 	public Tmio1Conductore saveDriver(Tmio1Conductore driver);
 	public boolean validNewDriver(Tmio1Conductore driver);
 	public Iterable<Tmio1Conductore> findAll();
-	
+	public Tmio1Conductore finbyID(String cedula);
 }

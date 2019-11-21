@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import ci.workshop.test.dao.RutasDao;
 import ci.workshop.test.model.RouteStateType;
 import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.model.Tmio1SitiosRuta;
 import lombok.Data;
 
 @Service
@@ -48,7 +49,6 @@ public class TMioRutaService implements ITMioRutaService{
 	
 	@Override
 	public Tmio1Ruta saveRoute(Tmio1Ruta route) {
-		// TODO Auto-generated method stub
 		boolean save = validNewRoute(route);
 		if(save) {
 			dao.save(route);	
@@ -59,18 +59,21 @@ public class TMioRutaService implements ITMioRutaService{
 
 	@Override
 	public Iterable<Tmio1Ruta> findAll() {
-		// TODO Auto-generated method stub
 		return dao.findAll();
 	}
 
 	@Override
 	public Iterable<String> findAllStates() {
-		// TODO Auto-generated method stub
 		ArrayList<String> types = new ArrayList<>();
 		types.add(RouteStateType.Activa.toString());
 		types.add(RouteStateType.Inactiva.toString());
 
 		return (Iterable<String>) types;
+	}
+
+	@Override
+	public Tmio1Ruta findByID(int id) {
+		return dao.findById(id);
 	}
 
 }

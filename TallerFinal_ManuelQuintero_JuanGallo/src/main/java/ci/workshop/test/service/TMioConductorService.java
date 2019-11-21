@@ -54,4 +54,9 @@ public class TMioConductorService implements ITMioConductorService {
 		return dao.findAll();
 	}
 
+	@Override
+	public Tmio1Conductore finbyID(String cedula) {
+		return dao.findById(cedula);
+	}
+
 }

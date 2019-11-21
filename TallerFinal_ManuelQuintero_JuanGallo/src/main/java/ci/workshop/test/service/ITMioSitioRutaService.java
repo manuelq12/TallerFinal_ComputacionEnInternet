@@ -7,4 +7,5 @@ public interface ITMioSitioRutaService {
 	public Tmio1SitiosRuta saveSitio(Tmio1SitiosRuta sitio);
 	public Tmio1SitiosRuta updateSitioRuta(Tmio1SitiosRuta sitio);
 	public Tmio1SitiosRuta removeSitioRuta(Tmio1SitiosRuta sitio);
+
 }

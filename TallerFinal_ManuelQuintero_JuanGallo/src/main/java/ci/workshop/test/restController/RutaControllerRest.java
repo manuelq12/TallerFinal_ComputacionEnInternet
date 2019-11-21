@@ -1,7 +1,7 @@
 package ci.workshop.test.restController;
 
-
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,37 +12,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-
-import ci.workshop.test.model.Tmio1Bus;
-import ci.workshop.test.service.TMioBusService;
+import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.service.TMioRutaService;
 
 @RestController
-public class BusControllerRest {
-
-	TMioBusService busService;
-	
+public class RutaControllerRest {
+	TMioRutaService rutaService;
 	@Autowired
-	public BusControllerRest(TMioBusService busS) {
-		busService=busS;
+	public RutaControllerRest(TMioRutaService rutaServ) {
+		rutaService= rutaServ;
 	}
 	
-	@RequestMapping(path="/bus/{id}")
-	public Tmio1Bus findById(@PathVariable("id") String id) {
+	@RequestMapping(path="/rute/{id}")
+	public Tmio1Ruta findById(@PathVariable("id") String id) {
 		int codigo;
 		try {
 			codigo= Integer.parseInt(id);
-			return busService.findById(codigo);
+			return rutaService.findByID(codigo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	@RequestMapping(path="/rute/all")
+	public List<Tmio1Ruta> findAll() {
+		try {
+			return (List<Tmio1Ruta>) rutaService.findAll();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 //    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping(path= "bus/add")
-	public ResponseEntity<Object> addBus(@RequestBody Tmio1Bus bus) throws Exception 
+	@PostMapping(path= "/rute/add")
+	public ResponseEntity<Object> addRuta(@RequestBody Tmio1Ruta rute) throws Exception 
     {       
-    	busService.saveBus(bus);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(bus.getId()).toUri();
+		rutaService.saveRoute(rute);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(rute.getId()).toUri();
         return ResponseEntity.created(location).build();
     }
+	
 }

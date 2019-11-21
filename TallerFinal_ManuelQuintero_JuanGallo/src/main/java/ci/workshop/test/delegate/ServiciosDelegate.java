@@ -9,7 +9,6 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import ci.workshop.test.model.DateObject;
-import ci.workshop.test.model.Tmio1Ruta;
 import ci.workshop.test.model.Tmio1Servicio;
 
 public class ServiciosDelegate {
