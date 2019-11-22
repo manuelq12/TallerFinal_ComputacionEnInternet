@@ -6,7 +6,7 @@ import ci.workshop.test.dao.SitioRutaDao;
 import ci.workshop.test.model.Tmio1SitiosRuta;
 
 @Service
-public class TmMioSitioRutaService implements ITMioSitioRutaService{
+public class TMioSitioRutaService implements ITMioSitioRutaService{
 
 	private SitioRutaDao sitioDao;
 	
