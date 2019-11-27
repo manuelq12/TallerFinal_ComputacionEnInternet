@@ -38,7 +38,7 @@ public class BusControllerRest {
 		return null;
 	}
 //    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping(path= "bus/add")
+	@PostMapping(path= "/bus/")
 	public ResponseEntity<Object> addBus(@RequestBody Tmio1Bus bus) throws Exception 
     {       
     	busService.saveBus(bus);

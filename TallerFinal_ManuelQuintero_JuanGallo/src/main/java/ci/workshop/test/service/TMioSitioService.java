@@ -48,4 +48,14 @@ public class TMioSitioService implements ITMioSitioService{
 		}
 		return sitio;
 	}
+
+	@Override
+	public Tmio1Sitio findById(int id) {
+		try {
+			return sitioDao.findByID(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

@@ -16,8 +16,6 @@ public class SitioDao implements ISitioDao{
 
 	@PersistenceContext
 	private EntityManager entityManager;
-
-	
 	
 	@Override
 	public void save(Tmio1Sitio sitio) {
@@ -38,5 +36,11 @@ public class SitioDao implements ISitioDao{
 	@Override
 	public void delete(Tmio1Sitio sitio) {
 		entityManager.remove(sitio);
+	}
+
+	@Override
+	public Tmio1Sitio findByID(int sitio) {
+		String jpql = "Select a from Tmio1Sitio a Where a.id = '" + sitio + "'";
+		return (Tmio1Sitio)entityManager.createQuery(jpql).getSingleResult();
 	}
 }

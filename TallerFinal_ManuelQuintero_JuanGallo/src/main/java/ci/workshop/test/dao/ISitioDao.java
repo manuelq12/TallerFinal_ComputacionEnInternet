@@ -9,4 +9,5 @@ public interface ISitioDao {
 	public List<Tmio1Sitio> findAll();
 	public void update(Tmio1Sitio sitio);
 	public void delete(Tmio1Sitio sitio);
+	public Tmio1Sitio findByID(int sitio);
 }

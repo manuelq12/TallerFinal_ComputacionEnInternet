@@ -7,4 +7,5 @@ public interface ITMioSitioService {
 	public Tmio1Sitio saveSitio(Tmio1Sitio sitio);
 	public Tmio1Sitio updateSitio(Tmio1Sitio sitio);
 	public Tmio1Sitio removeSitio(Tmio1Sitio sitio);
+	public Tmio1Sitio findById(int id);
 }
