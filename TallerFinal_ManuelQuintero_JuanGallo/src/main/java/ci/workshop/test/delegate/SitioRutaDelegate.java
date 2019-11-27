@@ -18,7 +18,7 @@ public class SitioRutaDelegate {
 	public List<Tmio1SitiosRuta> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1SitiosRuta>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitioRuta/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1SitiosRuta>>>() {
+			response= rest.exchange(REST_URI+"/sitioRuta/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1SitiosRuta>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -36,7 +36,7 @@ public class SitioRutaDelegate {
 	public String saveSitio(Tmio1SitiosRuta nuevo) {
 		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitioRuta/add", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
+			response= rest.exchange(REST_URI+"/sitioRuta/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -53,7 +53,7 @@ public class SitioRutaDelegate {
 	public String updateSitio(Tmio1SitiosRuta nuevo) {
 		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitioRuta/update", HttpMethod.PATCH,null, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
+			response= rest.exchange(REST_URI+"/sitioRuta/", HttpMethod.PATCH,null, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -72,7 +72,7 @@ public class SitioRutaDelegate {
 		HttpEntity<TransactionBody<Tmio1SitiosRuta>> request= new HttpEntity<>(transaction);
 		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitio/delete/"+sitio.getId(), HttpMethod.DELETE,request, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
+			response= rest.exchange(REST_URI+"/sitio/"+sitio.getId(), HttpMethod.DELETE,request, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();

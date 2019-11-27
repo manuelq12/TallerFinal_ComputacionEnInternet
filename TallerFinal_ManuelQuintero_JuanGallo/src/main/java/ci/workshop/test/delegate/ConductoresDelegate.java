@@ -36,7 +36,7 @@ public class ConductoresDelegate {
 	public List<Tmio1Conductore> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Conductore>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/driver/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Conductore>>>() {
+			response= rest.exchange(REST_URI+"/driver/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Conductore>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -54,7 +54,7 @@ public class ConductoresDelegate {
 	public String saveDriver(Tmio1Conductore nuevo) {
 		ResponseEntity<TransactionBody<Tmio1Conductore>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/driver/add", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Conductore>>() {
+			response= rest.exchange(REST_URI+"/driver/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Conductore>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();

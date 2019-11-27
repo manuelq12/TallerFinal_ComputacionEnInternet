@@ -18,7 +18,7 @@ public class SitioDelegate {
 	public List<Tmio1Sitio> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Sitio>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitio/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Sitio>>>() {
+			response= rest.exchange(REST_URI+"/sitio/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Sitio>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -36,7 +36,7 @@ public class SitioDelegate {
 	public String saveSitio(Tmio1Sitio nuevo) {
 		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitio/add", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
+			response= rest.exchange(REST_URI+"/sitio/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -53,7 +53,7 @@ public class SitioDelegate {
 	public String updateSitio(Tmio1Sitio nuevo) {
 		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitio/update", HttpMethod.PATCH,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
+			response= rest.exchange(REST_URI+"/sitio/", HttpMethod.PATCH,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -73,7 +73,7 @@ public class SitioDelegate {
 		HttpEntity<TransactionBody<Tmio1Sitio>> request= new HttpEntity<>(transaction);
 		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitio/delete/"+sitio.getId(), HttpMethod.DELETE,request, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
+			response= rest.exchange(REST_URI+"/sitio/"+sitio.getId(), HttpMethod.DELETE,request, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();

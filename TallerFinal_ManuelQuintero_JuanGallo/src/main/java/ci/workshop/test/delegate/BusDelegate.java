@@ -37,7 +37,7 @@ public class BusDelegate {
 	public List<Tmio1Bus> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Bus>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/bus/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Bus>>>() {
+			response= rest.exchange(REST_URI+"/bus/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Bus>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -55,7 +55,7 @@ public class BusDelegate {
 	public String saveBus(Tmio1Bus nuevo) {
 		ResponseEntity<TransactionBody<Tmio1Bus>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/bus/add", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Bus>>() {
+			response= rest.exchange(REST_URI+"/bus/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Bus>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();

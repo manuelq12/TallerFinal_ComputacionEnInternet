@@ -54,7 +54,7 @@ public class ServiciosDelegate {
 	public String saveService(Tmio1Servicio nuevo) {
 		ResponseEntity<TransactionBody<Tmio1Servicio>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/service/add", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Servicio>>() {
+			response= rest.exchange(REST_URI+"/service/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Servicio>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -90,7 +90,7 @@ public class ServiciosDelegate {
 	public String editService(Tmio1Servicio nuevo) {
 		ResponseEntity<TransactionBody<Tmio1Servicio>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/service/add", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Servicio>>() {
+			response= rest.exchange(REST_URI+"/service/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Servicio>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();

@@ -37,7 +37,7 @@ public class RutaDelegate {
 	public List<Tmio1Ruta> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Ruta>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/rute/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Ruta>>>() {
+			response= rest.exchange(REST_URI+"/rute/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Ruta>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -55,7 +55,7 @@ public class RutaDelegate {
 	public String saveRute(Tmio1Ruta nuevo) {
 		ResponseEntity<TransactionBody<Tmio1Ruta>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/rute/add", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Ruta>>() {
+			response= rest.exchange(REST_URI+"/rute/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Ruta>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
