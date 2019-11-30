@@ -29,15 +29,6 @@ public class SitioController {
 		this.sitioService= sitioService;
 	}
 	
-	@GetMapping("/login")
-	public String login() {
-		return "/customLogin";
-	}
-	
-	@GetMapping("/logout")
-	public String logout() {
-		return "/customLogin";
-	}
 	@GetMapping("/sitio/")
 	public String index(Model model) {
 		model.addAttribute("sitios",sitioService.findAll());

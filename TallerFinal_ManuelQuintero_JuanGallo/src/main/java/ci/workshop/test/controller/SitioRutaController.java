@@ -19,25 +19,17 @@ import lombok.Data;
 @Controller
 @Data
 public class SitioRutaController {
-TMioSitioRutaService sitioService;
+	
+TMioSitioRutaService sitioRService;
 	
 	@Autowired
 	public SitioRutaController(TMioSitioRutaService sitioService){
-		this.sitioService= sitioService;
+		this.sitioRService= sitioService;
 	}
-	
-	@GetMapping("/login")
-	public String login() {
-		return "/customLogin";
-	}
-	
-	@GetMapping("/logout")
-	public String logout() {
-		return "/customLogin";
-	}
+
 	@GetMapping("/sitioRuta/")
 	public String index(Model model) {
-		model.addAttribute("sitiosRuta",sitioService.findAll());
+		model.addAttribute("sitiosRuta",sitioRService.findAll());
 		return "/sitioRuta/index";
 	}
 	@GetMapping("/sitioRuta/add-sitioRuta")
