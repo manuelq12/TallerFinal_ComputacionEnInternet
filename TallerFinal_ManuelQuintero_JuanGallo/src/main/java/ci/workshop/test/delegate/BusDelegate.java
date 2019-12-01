@@ -55,12 +55,30 @@ public class BusDelegate {
 		}
 		return null;
 	}
+//	public List<String> findAllTypes() {
+//		ResponseEntity<TransactionBody<List<String>>> response= null;
+//		TransactionBody<List<String>> transaction = new TransactionBody<List<String>>("busTypes", new ArrayList<String>());
+//		HttpEntity<TransactionBody<List<String>>> request = new HttpEntity<>(transaction);
+//		try {
+//			response= rest.exchange(REST_URI+"/bus/buses/",HttpMethod.GET,request, new ParameterizedTypeReference<TransactionBody<List<String>>>() {
+//			});
+//		} catch (HttpStatusCodeException e) {
+//			int statusCode=e.getStatusCode().value();
+//			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
+//			e.printStackTrace();
+//		} catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		if(response!=null) {
+//			List<String> buses= response.getBody().getBody();
+//			return buses;
+//		}
+//		return null;
+//	}
 	public List<String> findAllTypes() {
 		ResponseEntity<TransactionBody<List<String>>> response= null;
-		TransactionBody<List<String>> transaction = new TransactionBody<List<String>>("busTypes", new ArrayList<String>());
-		HttpEntity<TransactionBody<List<String>>> request = new HttpEntity<>(transaction);
 		try {
-			response= rest.exchange(REST_URI+"/bus/buses/",HttpMethod.GET,request, new ParameterizedTypeReference<TransactionBody<List<String>>>() {
+			response= rest.exchange(REST_URI+"/bus/buses/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<String>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
