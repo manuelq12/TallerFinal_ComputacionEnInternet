@@ -53,7 +53,7 @@ public class SitioController {
 		model.addAttribute("sitio",sitioDelegate.findById(Integer.parseInt(id)));	
 		return "/sitio/edit-sitio";
 	}
-	@DeleteMapping("/sitio/delete-sitio/{id}")
+	@GeteMapping("/sitio/delete-sitio/{id}")
 	public String deleteSitio(@PathVariable("id") String id,Model model){
 		sitioDelegate.removeSitio(sitioDelegate.findById(Integer.parseInt(id)));
 		return "/sitio/";

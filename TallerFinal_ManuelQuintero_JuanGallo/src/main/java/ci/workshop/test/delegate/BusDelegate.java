@@ -83,5 +83,8 @@ public class BusDelegate {
 		
 		return "Guardado";
 	}
+	public void removeBus(String id) {
+		rest.delete(REST_URI + "/bus/delete/"+id);		
+	}
 	
 }
