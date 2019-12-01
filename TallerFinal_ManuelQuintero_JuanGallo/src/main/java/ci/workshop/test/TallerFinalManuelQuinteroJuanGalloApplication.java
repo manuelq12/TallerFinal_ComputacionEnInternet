@@ -149,9 +149,7 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 			routeR.save(route3);
 			
 //			Tmio1Servicio ser1 = new Tmio1Servicio();
-//			Tmio1Servicio ser2 = new Tmio1Servicio();
 //			Tmio1ServicioPK serPK1 = new Tmio1ServicioPK();
-//			Tmio1ServicioPK serPK2 = new Tmio1ServicioPK();
 //			
 //			serPK1.setCedulaConductor(driver.getCedula());
 //			serPK1.setIdBus(bus2.getId());
@@ -162,6 +160,10 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 //			ser1.setTmio1Bus(bus2);
 //			ser1.setTmio1Conductore(driver);
 //			ser1.setTmio1Ruta(route2);
+			
+//			Tmio1Servicio ser2 = new Tmio1Servicio();
+//			Tmio1ServicioPK serPK2 = new Tmio1ServicioPK();
+//			
 //			
 //			serPK2.setCedulaConductor(driver1.getCedula());
 //			serPK2.setIdBus(bus1.getId());

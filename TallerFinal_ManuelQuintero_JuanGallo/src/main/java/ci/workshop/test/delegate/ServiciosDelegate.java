@@ -115,7 +115,7 @@ public class ServiciosDelegate {
 		// TODO Auto-generated method stub
 		ResponseEntity<TransactionBody<List<Tmio1Bus>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/bus/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Bus>>>() {
+			response= rest.exchange(REST_URI+"/service/buses",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Bus>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -133,7 +133,7 @@ public class ServiciosDelegate {
 	public List<Tmio1Ruta> findAllRoutes() {
 		ResponseEntity<TransactionBody<List<Tmio1Ruta>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/rute/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Ruta>>>() {
+			response= rest.exchange(REST_URI+"/service/routes",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Ruta>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -151,7 +151,7 @@ public class ServiciosDelegate {
 	public List<Tmio1Conductore> findAllDrivers() {
 		ResponseEntity<TransactionBody<List<Tmio1Conductore>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/driver/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Conductore>>>() {
+			response= rest.exchange(REST_URI+"/service/drivers",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Conductore>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();

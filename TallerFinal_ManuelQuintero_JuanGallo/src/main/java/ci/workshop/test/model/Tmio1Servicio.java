@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 /**
  * The persistent class for the tmio1_servicios database table.
@@ -24,16 +26,19 @@ public class Tmio1Servicio implements Serializable {
 	//bi-directional many-to-one association to Tmio1Bus
 	@ManyToOne
 	@JoinColumn(name="id_bus", insertable=false, updatable=false)
+	@JsonIgnoreProperties("services")
 	private Tmio1Bus tmio1Bus;
 
 	//bi-directional many-to-one association to Tmio1Conductore
 	@ManyToOne
 	@JoinColumn(name="cedula_conductor", insertable=false, updatable=false)
+	@JsonIgnoreProperties("services")
 	private Tmio1Conductore tmio1Conductore;
 
 	//bi-directional many-to-one association to Tmio1Ruta
 	@ManyToOne
 	@JoinColumn(name="id_ruta", insertable=false, updatable=false)
+	@JsonIgnoreProperties("services")
 	private Tmio1Ruta tmio1Ruta;
 
 

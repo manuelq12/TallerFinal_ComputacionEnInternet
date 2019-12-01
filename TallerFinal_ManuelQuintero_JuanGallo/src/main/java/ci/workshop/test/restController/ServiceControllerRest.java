@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import ci.workshop.test.delegate.TransactionBody;
+import ci.workshop.test.model.Tmio1Bus;
+import ci.workshop.test.model.Tmio1Conductore;
+import ci.workshop.test.model.Tmio1Ruta;
 import ci.workshop.test.model.Tmio1Servicio;
 import ci.workshop.test.model.Tmio1ServicioPK;
 import ci.workshop.test.service.TMioServicioService;
@@ -41,6 +44,24 @@ public class ServiceControllerRest {
 	public TransactionBody<List<Tmio1Servicio>> findAll() {
 		TransactionBody<List<Tmio1Servicio>> tb = new TransactionBody<List<Tmio1Servicio>>();
 		tb.setBody((List<Tmio1Servicio>) serviceService.findAll());
+		return tb;
+	}
+	@GetMapping("/api/service/buses")
+	public TransactionBody<List<Tmio1Bus>> findAllBuses() {
+		TransactionBody<List<Tmio1Bus>> tb = new TransactionBody<List<Tmio1Bus>>();
+		tb.setBody((List<Tmio1Bus>) serviceService.findAllBuses());
+		return tb;
+	}
+	@GetMapping("/api/service/drivers")
+	public TransactionBody<List<Tmio1Conductore>> findAllDrivers() {
+		TransactionBody<List<Tmio1Conductore>> tb = new TransactionBody<List<Tmio1Conductore>>();
+		tb.setBody((List<Tmio1Conductore>) serviceService.findAllDrivers());
+		return tb;
+	}
+	@GetMapping("/api/service/routes")
+	public TransactionBody<List<Tmio1Ruta>> findAllRoutes() {
+		TransactionBody<List<Tmio1Ruta>> tb = new TransactionBody<List<Tmio1Ruta>>();
+		tb.setBody((List<Tmio1Ruta>) serviceService.findAllRoutes());
 		return tb;
 	}
 	@GetMapping("/api/service/ids")
