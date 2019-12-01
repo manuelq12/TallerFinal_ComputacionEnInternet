@@ -13,8 +13,8 @@ import ci.workshop.test.model.Tmio1Ruta;
 
 @Component
 public class RutaDelegate {
-	private RestTemplate rest;
-	public static final String REST_URI="http://localhost:8080/";
+	private RestTemplate rest = new RestTemplate();
+	public static final String REST_URI="http://localhost:8080/api";
 	
 	public Tmio1Ruta findById(String id) {
 		ResponseEntity<TransactionBody<Tmio1Ruta>> response= null;
@@ -37,7 +37,7 @@ public class RutaDelegate {
 	public List<Tmio1Ruta> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Ruta>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/rute/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Ruta>>>() {
+			response= rest.exchange(REST_URI+"/rute/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Ruta>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -64,7 +64,7 @@ public class RutaDelegate {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		if(response!=null && response.getBody().getBody() !=null) {
+		if(response!=null) {
 			return "Guardado!";
 		}
 		return "Error";

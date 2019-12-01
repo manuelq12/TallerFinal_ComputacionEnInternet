@@ -61,7 +61,7 @@ public class BusControllerRest {
 	}
 	
 	@PostMapping("/api/bus")
-	public Tmio1Bus addBus (@RequestBody Tmio1Bus newBus) throws Exception 
+	public Tmio1Bus addBus (@RequestBody Tmio1Bus newBus)
     {       
 		System.out.println("Llego");
 		busService.saveBus(newBus);

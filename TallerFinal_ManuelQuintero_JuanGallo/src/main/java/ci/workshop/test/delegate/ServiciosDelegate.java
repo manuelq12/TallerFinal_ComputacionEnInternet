@@ -12,8 +12,8 @@ import ci.workshop.test.model.DateObject;
 import ci.workshop.test.model.Tmio1Servicio;
 
 public class ServiciosDelegate {
-	private RestTemplate rest;
-	public static final String REST_URI="http://localhost:8080/";
+	private RestTemplate rest = new RestTemplate();
+	public static final String REST_URI="http://localhost:8080/api";
 	
 	public Tmio1Servicio findById(String id) {
 		ResponseEntity<TransactionBody<Tmio1Servicio>> response= null;

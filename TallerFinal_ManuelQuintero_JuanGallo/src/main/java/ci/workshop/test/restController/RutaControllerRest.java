@@ -25,7 +25,7 @@ public class RutaControllerRest {
 		rutaService= rutaServ;
 	}
 	
-	@RequestMapping(path="/rute/{id}")
+	@RequestMapping(path="api/rute/{id}")
 	public TransactionBody<Tmio1Ruta> findById(@PathVariable("id") String id) {
 		int codigo;
 		try {
@@ -38,7 +38,7 @@ public class RutaControllerRest {
 		}
 		return null;
 	}
-	@RequestMapping(path="/rute/all")
+	@RequestMapping(path="api/rute/all")
 	public TransactionBody<List<Tmio1Ruta>> findAll() {
 		try {
 			TransactionBody<List<Tmio1Ruta>> tb = new TransactionBody<List<Tmio1Ruta>>();
@@ -49,7 +49,7 @@ public class RutaControllerRest {
 		}
 		return null;
 	}
-	@RequestMapping(path="/rute/states")
+	@RequestMapping(path="api/rute/states")
 	public TransactionBody<List<String>> findStates() {
 		try {
 			TransactionBody<List<String>> tb = new TransactionBody<List<String>>();
@@ -63,7 +63,7 @@ public class RutaControllerRest {
 	
 	
 //    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping(path= "/rute/add")
+	@PostMapping(path= "api/rute/add")
 	public ResponseEntity<Object> addRuta(@RequestBody Tmio1Ruta rute) throws Exception 
     {       
 		rutaService.saveRoute(rute);

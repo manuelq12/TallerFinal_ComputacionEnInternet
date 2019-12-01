@@ -12,7 +12,7 @@ import ci.workshop.test.model.Tmio1Conductore;
 
 @Component
 public class ConductoresDelegate {
-	private RestTemplate rest;
+	private RestTemplate rest = new RestTemplate();
 	public static final String REST_URI="http://localhost:8080/api";
 	
 	public Tmio1Conductore findById(String cedula) {
@@ -36,7 +36,7 @@ public class ConductoresDelegate {
 	public List<Tmio1Conductore> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Conductore>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/driver/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Conductore>>>() {
+			response= rest.exchange(REST_URI+"/driver/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Conductore>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -63,7 +63,7 @@ public class ConductoresDelegate {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		if(response!=null && response.getBody().getBody() !=null) {
+		if(response!=null) {
 			return "Guardado!";
 		}
 		return "Error";

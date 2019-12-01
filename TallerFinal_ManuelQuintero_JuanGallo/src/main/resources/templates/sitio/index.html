@@ -71,8 +71,10 @@
 						<br>
 						<br>
 						<h4>Add New sitio!</h4>
+						<div sec:authorize="hasRole('admin')">
 						<div>
 							<a th:href="@{/sitio/add-sitio}" class="btn btn-primary"><i class="fas fa-road"></i></a>
+						</div>
 						</div>
 					</div>
 				</div>

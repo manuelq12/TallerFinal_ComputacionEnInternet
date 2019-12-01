@@ -14,30 +14,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private LoggingAccessDeniedHandler accessDeniedHandler;
 	
-//	@Autowired
-//	private MyCustomUserDetailsService userDetailsService;
-	
-//	@Override
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//		auth.authenticationProvider(authenticationProvider());
-//	}
-
-//	@Bean
-//	public DaoAuthenticationProvider authenticationProvider() {
-//		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-//		authProvider.setUserDetailsService(userDetailsService);
-//		authProvider.setPasswordEncoder(encoder());
-//		return authProvider;
-//	}
-//
-//	@Bean
-//	public PasswordEncoder encoder() {
-//		return new BCryptPasswordEncoder(11);
-//	}
-	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-
 		httpSecurity.authorizeRequests()
 		.antMatchers("/api/**").permitAll()
 		.antMatchers("/bus/**").access("hasRole('admin')")

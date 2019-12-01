@@ -66,7 +66,7 @@ public class SitioDelegate {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		if(response!=null && response.getBody().getBody() !=null) {
+		if(response!=null) {
 			return "Guardado!";
 		}
 		return "Error";

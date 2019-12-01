@@ -45,7 +45,6 @@ public class DriverController {
 			model.addAttribute("driver", driver);
 			return "/driver/add-driver";
 		}
-		
 		driverDelegate.saveDriver(driver);
 		return "redirect:/driver/";
 	}

@@ -76,28 +76,6 @@ public class BusDelegate {
 	}
 
 	public String saveBus(Tmio1Bus nuevo) {
-//		TransactionBody<Tmio1Bus> transaction = new TransactionBody<>("newBus", nuevo);
-//		HttpEntity<TransactionBody<Tmio1Bus>> request = new HttpEntity<>(transaction);
-//		ResponseEntity<TransactionBody<Tmio1Bus>> response= null;
-//		
-//		try {
-//			response= rest.exchange(REST_URI+"/bus/aBus", HttpMethod.POST,request, new ParameterizedTypeReference<TransactionBody<Tmio1Bus>>() {
-//			});
-//		}catch (HttpStatusCodeException e) {
-//			int statusCode=e.getStatusCode().value();
-//			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-//			e.printStackTrace();
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		if(response!=null) {
-//			System.out.println(response.getStatusCodeValue());
-//			return "Guardado!";
-//		}
-//
-//		
-//		return "Error";
-
 		Tmio1Bus car = rest.postForEntity(REST_URI + "/bus", nuevo, Tmio1Bus.class).getBody();
 		if(car == null) {
 			System.out.println("Fallo");
@@ -106,4 +84,26 @@ public class BusDelegate {
 		
 		return "Guardado";
 	}
+	
+//	TransactionBody<Tmio1Bus> transaction = new TransactionBody<>("newBus", nuevo);
+//	HttpEntity<TransactionBody<Tmio1Bus>> request = new HttpEntity<>(transaction);
+//	ResponseEntity<TransactionBody<Tmio1Bus>> response= null;
+//	
+//	try {
+//		response= rest.exchange(REST_URI+"/bus/aBus", HttpMethod.POST,request, new ParameterizedTypeReference<TransactionBody<Tmio1Bus>>() {
+//		});
+//	}catch (HttpStatusCodeException e) {
+//		int statusCode=e.getStatusCode().value();
+//		System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
+//		e.printStackTrace();
+//	} catch(Exception e) {
+//		e.printStackTrace();
+//	}
+//	if(response!=null) {
+//		System.out.println(response.getStatusCodeValue());
+//		return "Guardado!";
+//	}
+//
+//	
+//	return "Error";
 }
