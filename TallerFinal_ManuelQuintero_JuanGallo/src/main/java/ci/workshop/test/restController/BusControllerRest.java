@@ -1,10 +1,10 @@
 package ci.workshop.test.restController;
 
 
-import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 
 import ci.workshop.test.delegate.TransactionBody;
 import ci.workshop.test.model.Tmio1Bus;
@@ -31,7 +31,7 @@ public class BusControllerRest {
 		busService=busS;
 	}
 	
-	@RequestMapping(path="/bus/{id}")
+	@RequestMapping(path="api/bus/{id}")
 	public Tmio1Bus findById(@PathVariable("id") String id) {
 		int codigo;
 		try {
@@ -42,43 +42,34 @@ public class BusControllerRest {
 		}
 		return null;
 	}
-	@RequestMapping(value="/api/bus/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(value="/api/bus/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
-	public List<Tmio1Bus> findAll() {
+	public TransactionBody<List<Tmio1Bus>> findAllTP() {
+		TransactionBody<List<Tmio1Bus>> tb = new TransactionBody<List<Tmio1Bus>>();
+		tb.setBody((List<Tmio1Bus>) busService.findAll());
+		return tb;
 
-		return (List<Tmio1Bus>) busService.findAll();
 	}
 	
-<<<<<<< Updated upstream
-//	@RequestMapping(value="/api/bus/buses/", method = RequestMethod.GET)
-//	@ResponseBody
-//	public TransactionBody<List<String>> findAllTypes() {
-//		TransactionBody<List<String>> tb = new TransactionBody<List<String>>();
-//		tb.setBody((List<String>) busService.findAllTypes());
-//		return tb;
-//	}
-	@GetMapping("/api/bus/buses/")
-	public List<String> findAllTypes() {
-		return (List<String>) busService.findAllTypes();
-	}
-	
-	@GetMapping("/api/bus/buses/")
+	@GetMapping("/api/bus/types/")
 	public TransactionBody<List<String>> findAllTypesTP() {
-=======
-	@GetMapping("/api/bus/buses")
-	public TransactionBody<List<String>> findAllTypes() {
->>>>>>> Stashed changes
 		TransactionBody<List<String>> tb = new TransactionBody<List<String>>();
 		tb.setBody((List<String>) busService.findAllTypes());
 		return tb;
 	}
 	
 //    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping(path= "/bus/")
-	public ResponseEntity<Object> addBus(@RequestBody Tmio1Bus bus) throws Exception 
+	@PostMapping("/api/bus/aBus")
+	public TransactionBody<Tmio1Bus> addBus (@RequestBody TransactionBody<Tmio1Bus> newBus) throws Exception 
     {       
+		Tmio1Bus bus = newBus.getBody();
+		System.out.println("NADAAAA !"+bus.getMarca());
+		System.out.println(bus);
     	busService.saveBus(bus);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(bus.getId()).toUri();
-        return ResponseEntity.created(location).build();
+    	TransactionBody<Tmio1Bus> transaction = new TransactionBody<Tmio1Bus>();
+    	transaction.setBody(bus);
+//		ResponseEntity<TransactionBody<Tmio1Bus>> response = new ResponseEntity<TransactionBody<Tmio1Bus>>(transaction,
+//				HttpStatus.SEE_OTHER);
+		return transaction;
     }
 }

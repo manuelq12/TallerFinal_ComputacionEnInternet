@@ -40,7 +40,7 @@ public class BusDelegate {
 	public List<Tmio1Bus> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Bus>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/bus/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Bus>>>() {
+			response= rest.exchange(REST_URI+"/bus/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Bus>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -55,30 +55,10 @@ public class BusDelegate {
 		}
 		return null;
 	}
-//	public List<String> findAllTypes() {
-//		ResponseEntity<TransactionBody<List<String>>> response= null;
-//		TransactionBody<List<String>> transaction = new TransactionBody<List<String>>("busTypes", new ArrayList<String>());
-//		HttpEntity<TransactionBody<List<String>>> request = new HttpEntity<>(transaction);
-//		try {
-//			response= rest.exchange(REST_URI+"/bus/buses/",HttpMethod.GET,request, new ParameterizedTypeReference<TransactionBody<List<String>>>() {
-//			});
-//		} catch (HttpStatusCodeException e) {
-//			int statusCode=e.getStatusCode().value();
-//			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-//			e.printStackTrace();
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		if(response!=null) {
-//			List<String> buses= response.getBody().getBody();
-//			return buses;
-//		}
-//		return null;
-//	}
 	public List<String> findAllTypes() {
 		ResponseEntity<TransactionBody<List<String>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/bus/buses/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<String>>>() {
+			response= rest.exchange(REST_URI+"/bus/types/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<String>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -93,10 +73,14 @@ public class BusDelegate {
 		}
 		return null;
 	}
+
 	public String saveBus(Tmio1Bus nuevo) {
+		TransactionBody<Tmio1Bus> transaction = new TransactionBody<>("newBus", nuevo);
+		HttpEntity<TransactionBody<Tmio1Bus>> request = new HttpEntity<>(transaction);
 		ResponseEntity<TransactionBody<Tmio1Bus>> response= null;
+		
 		try {
-			response= rest.exchange(REST_URI+"/bus/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Bus>>() {
+			response= rest.exchange(REST_URI+"/bus/aBus", HttpMethod.POST,request, new ParameterizedTypeReference<TransactionBody<Tmio1Bus>>() {
 			});
 		}catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -105,9 +89,11 @@ public class BusDelegate {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		if(response!=null && response.getBody().getBody() !=null) {
+		if(response!=null && response.getBody() !=null) {
 			return "Guardado!";
 		}
+
+		
 		return "Error";
 	}
 }

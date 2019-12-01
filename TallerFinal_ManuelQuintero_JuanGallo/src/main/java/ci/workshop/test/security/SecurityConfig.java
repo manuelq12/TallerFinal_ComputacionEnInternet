@@ -45,7 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/services/**").access("hasRole('admin') OR hasRole('operador')")
 		.antMatchers("/services/add-service/**").access("hasRole('operador')")
 		.antMatchers("/services/edit/**").access("hasRole('operador')")	
-		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").permitAll().and()
 		.logout().invalidateHttpSession(true).clearAuthentication(true).permitAll().and().exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 

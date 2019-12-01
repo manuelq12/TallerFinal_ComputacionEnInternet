@@ -48,8 +48,8 @@ public class BusController {
 			model.addAttribute("types",busDelegate.findAllTypes());
 			return "/bus/add-bus";
 		}
+		System.out.println("HOLAAAAAAAAAAAAAAAAAAAAA !"+busDelegate.saveBus(bus));
 		
-		busDelegate.saveBus(bus);
 		return "redirect:/bus/";
 	}
 }
