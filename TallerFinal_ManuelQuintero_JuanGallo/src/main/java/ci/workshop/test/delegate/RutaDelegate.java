@@ -53,21 +53,8 @@ public class RutaDelegate {
 		return null;
 	}
 	public String saveRute(Tmio1Ruta nuevo) {
-		ResponseEntity<TransactionBody<Tmio1Ruta>> response= null;
-		try {
-			response= rest.exchange(REST_URI+"/rute/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Ruta>>() {
-			});
-		}catch (HttpStatusCodeException e) {
-			int statusCode=e.getStatusCode().value();
-			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		if(response!=null) {
-			return "Guardado!";
-		}
-		return "Error";
+		Tmio1Ruta rute = rest.postForEntity(REST_URI + "/rute", nuevo, Tmio1Ruta.class).getBody();
+		return "Enviado";
 	}
 	public List<String> findAllStates() {
 		ResponseEntity<TransactionBody<List<String>>> response= null;

@@ -55,32 +55,19 @@ public class SitioDelegate {
 		return null;
 	}
 	public String saveSitio(Tmio1Sitio nuevo) {
-		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
-		try {
-			response= rest.exchange(REST_URI+"/sitio/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
-			});
-		}catch (HttpStatusCodeException e) {
-			int statusCode=e.getStatusCode().value();
-			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		if(response!=null) {
-			return "Guardado!";
-		}
-		return "Error";
+		Tmio1Sitio x = rest.postForEntity(REST_URI + "/sitio", nuevo, Tmio1Sitio.class).getBody();
+		return "Enviado";		
 	}
 	public String updateSitio(Tmio1Sitio nuevo) {
 		try {
-			Tmio1Sitio x = rest.postForObject(REST_URI + "/sitio/edit", nuevo, Tmio1Sitio.class);		
+			Tmio1Sitio x = rest.patchForObject(REST_URI + "/sitio", nuevo, Tmio1Sitio.class);	
 		}
 		catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			return "Error";
 		}
-		return "Guardado";
+		return "Enviado";
 	}
 	
 	public void delete(Tmio1Sitio sitio) {

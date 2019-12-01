@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import ci.workshop.test.delegate.ServiciosDelegate;
 import ci.workshop.test.model.DateObject;
 import ci.workshop.test.model.Tmio1Bus;
 import ci.workshop.test.model.Tmio1Conductore;
@@ -23,12 +24,12 @@ import ci.workshop.test.service.TMioServicioService;
 public class ServiceController {
 
 	
-	private TMioServicioService service;
+	private ServiciosDelegate service;
 	private String tempHash = "";
 	
 	 
 	@Autowired
-	public ServiceController(TMioServicioService s) {
+	public ServiceController(ServiciosDelegate s) {
 		// TODO Auto-generated constructor stub
 		service = s;
 	}

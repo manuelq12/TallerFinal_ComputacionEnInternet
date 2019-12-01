@@ -13,10 +13,13 @@ import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import ci.workshop.test.dao.BusesDao;
 import ci.workshop.test.dao.ConductoresDao;
 import ci.workshop.test.dao.RutasDao;
+import ci.workshop.test.dao.ServiciosDao;
 import ci.workshop.test.dao.SitioDao;
 import ci.workshop.test.model.Tmio1Bus;
 import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.model.Tmio1Servicio;
+import ci.workshop.test.model.Tmio1ServicioPK;
 import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.User;
 import ci.workshop.test.model.UserType;
@@ -38,7 +41,7 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 
 	@Bean
 	public CommandLineRunner demo(ConductoresDao driverR, 
-			BusesDao busRepository, RutasDao routeR, SitioDao sitioDao) {
+			BusesDao busRepository, RutasDao routeR, SitioDao sitioDao, ServiciosDao serviceDao) {
 		return (args) -> {
 			//BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	        
@@ -145,10 +148,40 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 			
 			routeR.save(route3);
 			
+//			Tmio1Servicio ser1 = new Tmio1Servicio();
+//			Tmio1Servicio ser2 = new Tmio1Servicio();
+//			Tmio1ServicioPK serPK1 = new Tmio1ServicioPK();
+//			Tmio1ServicioPK serPK2 = new Tmio1ServicioPK();
+//			
+//			serPK1.setCedulaConductor(driver.getCedula());
+//			serPK1.setIdBus(bus2.getId());
+//			serPK1.setIdRuta(route2.getId());
+//			serPK1.setFechaInicio(LocalDate.of(2022, 5, 12));
+//			serPK1.setFechaFin(LocalDate.of(2023, 8, 11));
+//			ser1.setId(serPK1);
+//			ser1.setTmio1Bus(bus2);
+//			ser1.setTmio1Conductore(driver);
+//			ser1.setTmio1Ruta(route2);
+//			
+//			serPK2.setCedulaConductor(driver1.getCedula());
+//			serPK2.setIdBus(bus1.getId());
+//			serPK2.setIdRuta(route1.getId());
+//			serPK2.setFechaInicio(LocalDate.of(2020, 2, 12));
+//			serPK2.setFechaFin(LocalDate.of(2021, 1, 11));
+//			ser2.setId(serPK2);
+//			ser2.setTmio1Bus(bus1);
+//			ser2.setTmio1Conductore(driver1);
+//			ser2.setTmio1Ruta(route1);
+//			
+//			serviceDao.save(ser1);
+//			serviceDao.save(ser2);
+			
 			Tmio1Sitio sitio = new Tmio1Sitio();
 			sitio.setNombre("Simon Bolivar");
 			sitio.setDescripcion("Parada 1");
 			sitioDao.save(sitio);
+			
+			
 			
 		};
 	}

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import ci.workshop.test.delegate.TransactionBody;
 import ci.workshop.test.model.Tmio1Servicio;
 import ci.workshop.test.model.Tmio1ServicioPK;
 import ci.workshop.test.service.TMioServicioService;
@@ -35,15 +37,19 @@ public class ServiceControllerRest {
 		}
 		return null;
 	}
-	@RequestMapping(path="/service/all")
-	public List<Tmio1Servicio> findAll() {
-		try {
-			return (List<Tmio1Servicio>) serviceService.findAll();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+	@GetMapping("/api/service/all")
+	public TransactionBody<List<Tmio1Servicio>> findAll() {
+		TransactionBody<List<Tmio1Servicio>> tb = new TransactionBody<List<Tmio1Servicio>>();
+		tb.setBody((List<Tmio1Servicio>) serviceService.findAll());
+		return tb;
 	}
+	@GetMapping("/api/service/ids")
+	public TransactionBody<List<Tmio1ServicioPK>> findAllIDs() {
+		TransactionBody<List<Tmio1ServicioPK>> tb = new TransactionBody<List<Tmio1ServicioPK>>();
+		tb.setBody((List<Tmio1ServicioPK>) serviceService.findAllID());
+		return tb;
+	}
+	
 	@PostMapping(path= "/service/add")
 	public ResponseEntity<Object> addService(@RequestBody Tmio1Servicio service) throws Exception 
     {       

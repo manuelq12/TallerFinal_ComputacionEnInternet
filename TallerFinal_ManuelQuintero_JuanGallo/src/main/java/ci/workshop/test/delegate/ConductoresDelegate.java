@@ -52,20 +52,7 @@ public class ConductoresDelegate {
 		return null;
 	}
 	public String saveDriver(Tmio1Conductore nuevo) {
-		ResponseEntity<TransactionBody<Tmio1Conductore>> response= null;
-		try {
-			response= rest.exchange(REST_URI+"/driver/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1Conductore>>() {
-			});
-		}catch (HttpStatusCodeException e) {
-			int statusCode=e.getStatusCode().value();
-			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		if(response!=null) {
-			return "Guardado!";
-		}
-		return "Error";
+		Tmio1Conductore driver = rest.postForEntity(REST_URI + "/driver", nuevo, Tmio1Conductore.class).getBody();
+		return "Enviado";
 	}
 }

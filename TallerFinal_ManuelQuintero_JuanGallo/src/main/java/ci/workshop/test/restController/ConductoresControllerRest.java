@@ -47,14 +47,12 @@ public class ConductoresControllerRest {
 		}
 		return null;
 	}
-	
-//    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping(path= "api/driver/add")
-	public ResponseEntity<Object> addConductore(@RequestBody Tmio1Conductore driver) throws Exception 
+
+	@PostMapping(path= "api/driver")
+	public Tmio1Conductore addConductore(@RequestBody Tmio1Conductore driver) throws Exception 
     {       
-    	conductorService.saveDriver(driver);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(driver.getCedula()).toUri();
-        return ResponseEntity.created(location).build();
+		conductorService.saveDriver(driver);
+		return driver;
     }
 	
 

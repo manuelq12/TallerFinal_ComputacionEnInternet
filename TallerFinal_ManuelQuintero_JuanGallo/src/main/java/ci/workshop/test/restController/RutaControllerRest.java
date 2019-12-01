@@ -62,13 +62,12 @@ public class RutaControllerRest {
 	}
 	
 	
-//    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping(path= "api/rute/add")
-	public ResponseEntity<Object> addRuta(@RequestBody Tmio1Ruta rute) throws Exception 
+	@PostMapping(path= "api/rute")
+	public Tmio1Ruta addRuta (@RequestBody Tmio1Ruta rute) throws Exception 
     {       
 		rutaService.saveRoute(rute);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(rute.getId()).toUri();
-        return ResponseEntity.created(location).build();
+		return rute;
+		
     }
 	
 }

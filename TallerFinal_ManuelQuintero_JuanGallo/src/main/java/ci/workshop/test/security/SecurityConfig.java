@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeRequests()
+		httpSecurity.csrf().disable().authorizeRequests()
 		.antMatchers("/api/**").permitAll()
 		.antMatchers("/bus/**").access("hasRole('admin')")
 		.antMatchers("/driver/**").access("hasRole('admin')")

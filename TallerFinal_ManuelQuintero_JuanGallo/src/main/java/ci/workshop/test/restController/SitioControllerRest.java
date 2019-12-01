@@ -40,13 +40,12 @@ public class SitioControllerRest {
 		tb.setBody(sitioService.findById(id));
 		return tb;
 	}
-	@RequestMapping(path="api/sitio/add")
-	public ResponseEntity<Object> saveSitio(@RequestBody Tmio1Sitio sitio) {
+	@PostMapping("api/sitio")
+	public Tmio1Sitio saveSitio(@RequestBody Tmio1Sitio sitio) {
 		sitioService.saveSitio(sitio);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(sitio.getId()).toUri();
-        return ResponseEntity.created(location).build();
+		return sitio;
 	}
-	@PostMapping("api/sitio/edit")
+	@PatchMapping("api/sitio/edit")
 	public Tmio1Sitio updateSitio(@RequestBody Tmio1Sitio sitio) {
 		sitioService.updateSitio(sitio);
 		return sitio;
