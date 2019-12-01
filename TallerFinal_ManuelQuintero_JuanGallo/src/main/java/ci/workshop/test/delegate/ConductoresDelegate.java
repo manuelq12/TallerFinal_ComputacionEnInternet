@@ -13,7 +13,7 @@ import ci.workshop.test.model.Tmio1Conductore;
 @Component
 public class ConductoresDelegate {
 	private RestTemplate rest;
-	public static final String REST_URI="http://localhost:8080/";
+	public static final String REST_URI="http://localhost:8080/api";
 	
 	public Tmio1Conductore findById(String cedula) {
 		ResponseEntity<TransactionBody<Tmio1Conductore>> response= null;

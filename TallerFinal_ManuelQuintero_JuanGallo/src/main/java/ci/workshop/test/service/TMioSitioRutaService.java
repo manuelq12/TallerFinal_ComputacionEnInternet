@@ -3,6 +3,8 @@ package ci.workshop.test.service;
 import org.springframework.stereotype.Service;
 
 import ci.workshop.test.dao.SitioRutaDao;
+import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.model.Tmio1Servicio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
 
 @Service
@@ -46,6 +48,21 @@ public class TMioSitioRutaService implements ITMioSitioRutaService{
 			return null;
 		}
 		return sitio;
+	}
+	public Tmio1SitiosRuta findById(String id) {
+		Tmio1SitiosRuta respuesta = null;
+		
+		Iterable<Tmio1SitiosRuta> todos = findAll();
+
+		for (Tmio1SitiosRuta s : todos) {	
+			if(s.getHash().equals(id)){
+				respuesta = s;
+				break;
+			}
+		}
+		
+		
+		return respuesta;
 	}
 
 }

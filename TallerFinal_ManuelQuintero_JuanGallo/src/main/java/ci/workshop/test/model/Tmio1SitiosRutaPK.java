@@ -18,6 +18,7 @@ public class Tmio1SitiosRutaPK implements Serializable {
 	@Column(name="id_ruta", insertable=false, updatable=false)
 	private Integer idRuta;
 
+	
 	public Tmio1SitiosRutaPK() {
 	}
 	public Integer getIdSitio() {

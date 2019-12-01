@@ -17,6 +17,16 @@ public class Tmio1SitiosRuta implements Serializable {
 	@EmbeddedId
 	private Tmio1SitiosRutaPK id;
 
+	private int hash;
+	
+	public int getHash() {
+		return hash;
+	}
+
+	public void setHash(int hash) {
+		this.hash = hash;
+	}
+	
 	//bi-directional many-to-one association to Tmio1Ruta
 	@ManyToOne
 	@JoinColumn(name="id_ruta", insertable=false, updatable=false)

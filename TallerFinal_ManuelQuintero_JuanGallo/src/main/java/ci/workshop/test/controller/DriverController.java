@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import ci.workshop.test.delegate.ConductoresDelegate;
 import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.service.TMioConductorService;
 import lombok.Data;
@@ -18,17 +19,17 @@ import lombok.Data;
 public class DriverController {
 
 	
-	TMioConductorService driverService;
+	ConductoresDelegate driverDelegate;
 	 
 	@Autowired
-	public DriverController(TMioConductorService s) {
+	public DriverController(ConductoresDelegate s) {
 		// TODO Auto-generated constructor stub
-		driverService = s;
+		driverDelegate = s;
 	}
 	
 	@GetMapping("/driver/")
 	public String indexDriver(Model model) {
-		model.addAttribute("drivers", driverService.findAll());
+		model.addAttribute("drivers", driverDelegate.findAll());
 		return "/driver/index";
 	}
 	
@@ -45,7 +46,7 @@ public class DriverController {
 			return "/driver/add-driver";
 		}
 		
-		driverService.saveDriver(driver);
+		driverDelegate.saveDriver(driver);
 		return "redirect:/driver/";
 	}
 }
