@@ -42,10 +42,11 @@ public class BusController {
 		return "/bus/add-bus";
 	}
 	@GetMapping("/bus/delete-bus/{id}")
-	public String deleteBus(@PathVariable("id") String id,Model model) {
-		model.addAttribute("buses",busDelegate.findAll());
+	public String deleteBus(@PathVariable("id") String id) {
+		
 		busDelegate.removeBus(id);
-		return "/bus/index";
+		
+		return "redirect:/bus/";
 	}
 	
 	@PostMapping("/bus/add-bus")

@@ -47,7 +47,6 @@ public class BusControllerRest {
 		return null;
 	}
 	@RequestMapping(value="/api/bus/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	@ResponseBody
 	public TransactionBody<List<Tmio1Bus>> findAllTP() {
 		TransactionBody<List<Tmio1Bus>> tb = new TransactionBody<List<Tmio1Bus>>();
 		tb.setBody((List<Tmio1Bus>) busService.findAll());
@@ -72,8 +71,10 @@ public class BusControllerRest {
 	@DeleteMapping("/api/bus/delete/{id}")
 	public Tmio1Bus deleteBus (@PathVariable("id") String id)
     {       
-		Optional<Tmio1Bus> bus = Optional.of(busService.findById(Integer.parseInt(id)));
-		busService.removeCar(id);
-		return bus.get();
+		System.out.println("llega");
+		Tmio1Bus bus = busService.findById(Integer.parseInt(id));
+		System.out.println(bus);
+		busService.removeBus(bus);
+		return bus;
     }
 }

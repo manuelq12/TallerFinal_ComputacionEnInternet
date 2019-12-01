@@ -78,8 +78,8 @@ public class TMioBusService implements ITMioBusService{
 		return busDao.findById(id);
 	}
 
-	public void removeCar(String id) {
-		busDao.delete(busDao.findById(Integer.parseInt(id)));
+	public void removeBus(Tmio1Bus bus) {
+		busDao.delete(bus);
 	}
 
 	
