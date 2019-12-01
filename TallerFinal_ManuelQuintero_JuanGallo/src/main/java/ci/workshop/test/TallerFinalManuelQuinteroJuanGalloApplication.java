@@ -10,14 +10,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 
+import ci.workshop.test.dao.BusesDao;
+import ci.workshop.test.dao.ConductoresDao;
+import ci.workshop.test.dao.RutasDao;
+import ci.workshop.test.dao.SitioDao;
 import ci.workshop.test.model.Tmio1Bus;
 import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.User;
 import ci.workshop.test.model.UserType;
-import ci.workshop.test.repository.BusesRepository;
-import ci.workshop.test.repository.ConductoresRepository;
-import ci.workshop.test.repository.RutasRepository;
 import ci.workshop.test.service.UserService;
 
 @SpringBootApplication
@@ -35,8 +37,8 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(ConductoresRepository driverR, 
-			BusesRepository busRepository, RutasRepository routeR) {
+	public CommandLineRunner demo(ConductoresDao driverR, 
+			BusesDao busRepository, RutasDao routeR, SitioDao sitioDao) {
 		return (args) -> {
 			//BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	        
@@ -57,7 +59,6 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 			
 			
 			Tmio1Bus bus1 = new Tmio1Bus();
-			bus1.setId(1);
 			bus1.setCapacidad(new BigDecimal(5000));
 			bus1.setMarca("Mercedes-Benz");
 			bus1.setModelo(new BigDecimal(2019));
@@ -67,7 +68,6 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 			busRepository.save(bus1);
 			
 			Tmio1Bus bus2 = new Tmio1Bus();
-			bus2.setId(2);
 			bus2.setCapacidad(new BigDecimal(10000));
 			bus2.setMarca("Mercedes-Benz");
 			bus2.setModelo(new BigDecimal(2017));
@@ -145,6 +145,10 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 			
 			routeR.save(route3);
 			
+			Tmio1Sitio sitio = new Tmio1Sitio();
+			sitio.setNombre("Simon Bolivar");
+			sitio.setDescripcion("Parada 1");
+			sitioDao.save(sitio);
 			
 		};
 	}

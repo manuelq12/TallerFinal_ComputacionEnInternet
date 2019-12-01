@@ -38,7 +38,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 
-		httpSecurity.authorizeRequests() 
+		httpSecurity.authorizeRequests()
+		.antMatchers("/api/**").permitAll()
 		.antMatchers("/bus/**").access("hasRole('admin')")
 		.antMatchers("/driver/**").access("hasRole('admin')")
 		.antMatchers("/route/**").access("hasRole('admin')")

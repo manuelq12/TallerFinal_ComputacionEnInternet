@@ -6,19 +6,22 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import ci.workshop.test.model.Tmio1Sitio;
 
+@Component
 public class SitioDelegate {
-	private RestTemplate rest;
-	public static final String REST_URI="http://localhost:8080/";
+	
+	private RestTemplate rest = new RestTemplate();
+	public static final String REST_URI="http://localhost:8080/api";
 	
 	public List<Tmio1Sitio> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1Sitio>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitio/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Sitio>>>() {
+			response= rest.exchange(REST_URI+"/sitio/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1Sitio>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -29,6 +32,24 @@ public class SitioDelegate {
 		}
 		if(response!=null) {
 			List<Tmio1Sitio> sitio= response.getBody().getBody();
+			return sitio;
+		}
+		return null;
+	}
+	public Tmio1Sitio findById(int id) {
+		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
+		try {
+			response= rest.exchange(REST_URI+"/sitio/" + id,HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
+			});
+		} catch (HttpStatusCodeException e) {
+			int statusCode=e.getStatusCode().value();
+			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
+			e.printStackTrace();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if(response!=null) {
+			Tmio1Sitio sitio= response.getBody().getBody();
 			return sitio;
 		}
 		return null;
@@ -51,21 +72,15 @@ public class SitioDelegate {
 		return "Error";
 	}
 	public String updateSitio(Tmio1Sitio nuevo) {
-		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitio/", HttpMethod.PATCH,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
-			});
-		}catch (HttpStatusCodeException e) {
-			int statusCode=e.getStatusCode().value();
-			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
+			Tmio1Sitio x = rest.postForObject(REST_URI + "/sitio/edit", nuevo, Tmio1Sitio.class);		
 		}
-		if(response!=null && response.getBody().getBody() !=null) {
-			return "Actualizado!";
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return "Error";
 		}
-		return "Error";
+		return "Guardado";
 	}
 	
 	public void delete(Tmio1Sitio sitio) {

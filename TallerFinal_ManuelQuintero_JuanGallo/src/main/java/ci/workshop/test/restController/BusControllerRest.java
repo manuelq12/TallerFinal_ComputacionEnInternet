@@ -4,9 +4,7 @@ package ci.workshop.test.restController;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,11 +30,15 @@ public class BusControllerRest {
 	}
 	
 	@RequestMapping(path="api/bus/{id}")
-	public Tmio1Bus findById(@PathVariable("id") String id) {
+	public TransactionBody<Tmio1Bus> findById(@PathVariable("id") String id) {
 		int codigo;
+		TransactionBody<Tmio1Bus> tb = new TransactionBody<Tmio1Bus>();
 		try {
 			codigo= Integer.parseInt(id);
-			return busService.findById(codigo);
+			Tmio1Bus bus = busService.findById(codigo);
+			tb.setBody(bus);
+			return tb;
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -51,25 +53,18 @@ public class BusControllerRest {
 
 	}
 	
-	@GetMapping("/api/bus/types/")
+	@GetMapping("/api/bus/types")
 	public TransactionBody<List<String>> findAllTypesTP() {
 		TransactionBody<List<String>> tb = new TransactionBody<List<String>>();
 		tb.setBody((List<String>) busService.findAllTypes());
 		return tb;
 	}
 	
-//    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping("/api/bus/aBus")
-	public TransactionBody<Tmio1Bus> addBus (@RequestBody TransactionBody<Tmio1Bus> newBus) throws Exception 
+	@PostMapping("/api/bus")
+	public Tmio1Bus addBus (@RequestBody Tmio1Bus newBus) throws Exception 
     {       
-		Tmio1Bus bus = newBus.getBody();
-		System.out.println("NADAAAA !"+bus.getMarca());
-		System.out.println(bus);
-    	busService.saveBus(bus);
-    	TransactionBody<Tmio1Bus> transaction = new TransactionBody<Tmio1Bus>();
-    	transaction.setBody(bus);
-//		ResponseEntity<TransactionBody<Tmio1Bus>> response = new ResponseEntity<TransactionBody<Tmio1Bus>>(transaction,
-//				HttpStatus.SEE_OTHER);
-		return transaction;
+		System.out.println("Llego");
+		busService.saveBus(newBus);
+		return newBus;
     }
 }
