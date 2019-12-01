@@ -18,6 +18,7 @@ public class Tmio1SitiosRutaPK implements Serializable {
 	@Column(name="id_ruta", insertable=false, updatable=false)
 	private Integer idRuta;
 
+	private int hashId;
 	
 	public Tmio1SitiosRutaPK() {
 	}
@@ -52,7 +53,13 @@ public class Tmio1SitiosRutaPK implements Serializable {
 		int hash = 17;
 		hash = hash * prime + this.idSitio.hashCode();
 		hash = hash * prime + this.idRuta.hashCode();
-		
+		hashId= hash;
 		return hash;
+	}
+	public int getHashId() {
+		return hashId;
+	}
+	public void setHashId(int hashId) {
+		this.hashId = hashId;
 	}
 }

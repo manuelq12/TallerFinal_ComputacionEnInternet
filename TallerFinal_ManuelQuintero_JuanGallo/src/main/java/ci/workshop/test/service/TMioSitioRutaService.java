@@ -55,7 +55,7 @@ public class TMioSitioRutaService implements ITMioSitioRutaService{
 		Iterable<Tmio1SitiosRuta> todos = findAll();
 
 		for (Tmio1SitiosRuta s : todos) {	
-			if(s.getHash().equals(id)){
+			if(s.getHash()==Integer.parseInt(id)){
 				respuesta = s;
 				break;
 			}

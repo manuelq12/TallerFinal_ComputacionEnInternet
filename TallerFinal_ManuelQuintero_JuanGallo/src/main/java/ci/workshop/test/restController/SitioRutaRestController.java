@@ -75,7 +75,7 @@ public class SitioRutaRestController {
         return ResponseEntity.created(location).build();
 	}
 	
-	@RequestMapping(path="/sitioRuta/{id}")
+	@RequestMapping(path="api/sitioRuta/{id}")
 	public TransactionBody<Tmio1SitiosRuta> findByID(@PathVariable("id") String id) {
 		try {
 			TransactionBody<Tmio1SitiosRuta> tb = new TransactionBody<Tmio1SitiosRuta>();
