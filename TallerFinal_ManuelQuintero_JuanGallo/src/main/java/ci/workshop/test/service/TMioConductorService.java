@@ -20,8 +20,6 @@ public class TMioConductorService implements ITMioConductorService {
 	
 	@Override
 	public boolean validNewDriver(Tmio1Conductore driver) {
-		// TODO Auto-generated method stub
-		
 		boolean valid = false;
 		if(!(driver == null)) {
 			LocalDate nacimiento = driver.getFechaNacimiento();
@@ -30,7 +28,6 @@ public class TMioConductorService implements ITMioConductorService {
 			if(nacimiento.isBefore(contratacion)) {
 				valid = true;
 			}
-			
 		}
 		return valid;
 	}
@@ -59,4 +56,7 @@ public class TMioConductorService implements ITMioConductorService {
 		return dao.findById(cedula);
 	}
 
+	public void removeConductor(Tmio1Conductore id) {
+		dao.delete(id);
+	}
 }

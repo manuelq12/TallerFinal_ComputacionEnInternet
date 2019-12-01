@@ -71,9 +71,7 @@ public class BusControllerRest {
 	@DeleteMapping("/api/bus/delete/{id}")
 	public Tmio1Bus deleteBus (@PathVariable("id") String id)
     {       
-		System.out.println("llega");
 		Tmio1Bus bus = busService.findById(Integer.parseInt(id));
-		System.out.println(bus);
 		busService.removeBus(bus);
 		return bus;
     }

@@ -20,14 +20,11 @@ import lombok.Data;
 @Controller
 @Data
 public class SitioController {
-	
 	SitioDelegate sitioDelegate;
-	
 	@Autowired
 	public SitioController(SitioDelegate sitioService){
 		this.sitioDelegate= sitioService;
 	}
-	
 	@GetMapping("/sitio/")
 	public String index(Model model) {
 		model.addAttribute("sitios",sitioDelegate.findAll());
@@ -38,7 +35,6 @@ public class SitioController {
 		model.addAttribute("sitio",new Tmio1Sitio());
 		return "/sitio/add-sitio";
 	}
-	
 	@PostMapping("/sitio/add-sitio/")
 	public String saveSitio(@Valid @ModelAttribute("sitio") Tmio1Sitio sitio, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {
@@ -54,11 +50,10 @@ public class SitioController {
 		return "/sitio/edit-sitio";
 	}
 	@GetMapping("/sitio/delete-sitio/{id}")
-	public String deleteSitio(@PathVariable("id") String id,Model model){
-		sitioDelegate.removeSitio(sitioDelegate.findById(Integer.parseInt(id)));
-		return "/sitio/";
+	public String deleteSitio(@PathVariable("id") String id) {
+		sitioDelegate.removeSitio(id);
+		return "redirect:/sitio/";
 	}
-	
 	@PostMapping("/sitio/edit/")
 	public String editSitio(@Valid @ModelAttribute("sitio") Tmio1Sitio sitio, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {

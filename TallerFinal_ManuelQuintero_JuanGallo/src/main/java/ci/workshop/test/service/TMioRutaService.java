@@ -76,4 +76,8 @@ public class TMioRutaService implements ITMioRutaService{
 		return dao.findById(id);
 	}
 
+	public void removeRuta(Tmio1Ruta id) {
+		dao.delete(id);	
+	}
+
 }

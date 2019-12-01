@@ -61,6 +61,10 @@ public class SitioDelegate {
 		Tmio1Sitio x = rest.postForEntity(REST_URI + "/sitio", nuevo, Tmio1Sitio.class).getBody();
 		return "Enviado";		
 	}
+	public void removeSitio(String id) {
+		rest.delete(REST_URI + "/sitio/delete/"+id);		
+	}
+	
 	public String updateSitio(Tmio1Sitio nuevo) {
 		HttpClient client = HttpClients.createDefault();
 		rest.setRequestFactory(new HttpComponentsClientHttpRequestFactory(client));
@@ -75,20 +79,5 @@ public class SitioDelegate {
 		return "Enviado";
 	}
 	
-	public void delete(Tmio1Sitio sitio) {
-		TransactionBody<Tmio1Sitio> transaction= new TransactionBody<>("apiContext", sitio);
-		HttpEntity<TransactionBody<Tmio1Sitio>> request= new HttpEntity<>(transaction);
-		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
-		try {
-			response= rest.exchange(REST_URI+"/sitio/"+sitio.getId(), HttpMethod.DELETE,request, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
-			});
-		}catch (HttpStatusCodeException e) {
-			int statusCode=e.getStatusCode().value();
-			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		response.getBody();
-	}
+
 }

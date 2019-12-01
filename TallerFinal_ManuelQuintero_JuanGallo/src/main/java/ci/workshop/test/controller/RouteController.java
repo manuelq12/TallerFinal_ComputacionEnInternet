@@ -7,26 +7,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ci.workshop.test.delegate.RutaDelegate;
 import ci.workshop.test.model.Tmio1Ruta;
-import ci.workshop.test.service.TMioRutaService;
 import lombok.Data;
 
 @Controller
 @Data
 public class RouteController {
-
 	RutaDelegate rutaDelegate;
-	
 	@Autowired
 	public RouteController(RutaDelegate rutaS) {
 		// TODO Auto-generated constructor stub
 		rutaDelegate = rutaS;
 	}
-	
-	
 	@GetMapping("/route/")
 	public String indexRuta(Model model) {
 		model.addAttribute("routes",rutaDelegate.findAll());
@@ -38,10 +34,13 @@ public class RouteController {
 		
 		model.addAttribute("states",rutaDelegate.findAllStates());
 		model.addAttribute("route", new Tmio1Ruta());
-		
-		
-		
 		return "/route/add-route";
+	}
+	
+	@GetMapping("/route/delete-route/{id}")
+	public String deleteRoute(@PathVariable("id") String id) {
+		rutaDelegate.removeRuta(id);
+		return "redirect:/route/";
 	}
 	
 	@PostMapping("/route/add-route")
@@ -54,5 +53,4 @@ public class RouteController {
 		rutaDelegate.saveRute(ruta);
 		return"redirect:/route/";
 	}
-	
 }
