@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Service</title>
+</head>
+<body>
+<div>
+<div>
+<form action="#" th:action ="@{/sitioRuta/edit-sitio/{id}(id=${tempHash})}" method = "post" th:object = "${sitioRuta}">
+
+	<div class="row">
+		<div class="form-group col-md-6">
+				<label for = "rutaId">Ruta ID</label>
+				<select id  = "rutaId" th:field = "*{idRuta}">
+					<option th:each = "route:${routes}" th:selected = "${sitioRuta.idRuta = route}" th:value = "${route.id}"
+					th:text = ${route.id}></option>
+				</select>
+				<span th:if="${#fields.hasErrors('idRuta')}" th:errors="*{idRuta}" class="text-danger"></span>
+		</div>
+		<div class="form-group col-md-6">
+				<label for = "sitioId">Sitio ID</label>
+				<select id  = "sitioId" th:field = "*{idSitio}">
+					<option th:each = "sitio:${sitios}" th:selected = "${sitioRuta.idSitio = sitio}" th:value = "${sitio.id}"
+					th:text = ${sitio.id}></option>
+				</select>
+				<span th:if="${#fields.hasErrors('idSitio')}" th:errors="*{idSitio}" class="text-danger"></span>
+		</div>
+</div>
+<input type="submit" name="action" class="btn btn-primary"
+	value="Update Service">
+</form>
+</div>
+</div>
+</body>
+</html>

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ci.workshop.test.delegate.SitioRutaDelegate;
+import ci.workshop.test.model.Tmio1Servicio;
+import ci.workshop.test.model.Tmio1ServicioPK;
 import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
 import ci.workshop.test.model.Tmio1SitiosRutaPK;
@@ -25,6 +27,8 @@ public class SitioRutaController {
 	
 	SitioRutaDelegate sitioDelegate;
 	
+	
+	private String tempHash = "";
 	@Autowired
 	public SitioRutaController(SitioRutaDelegate sitioService){
 		this.sitioDelegate= sitioService;
@@ -42,6 +46,38 @@ public class SitioRutaController {
 		return "/sitioRuta/add-sitioRuta";
 	}
 	
+
+	@GetMapping("/sitioRuta/edit-sitio/{id}")
+	public String editSitioRuta(@PathVariable("id") String id,Model model){
+		model.addAttribute("sitioRuta",sitioDelegate.getByID(id));
+		model.addAttribute("ruotes", sitioDelegate.getAllRoutes());	
+		model.addAttribute("sitios", sitioDelegate.getAllSitio());
+		tempHash = id;	
+		model.addAttribute("tempHash", tempHash);
+		return "/sitioRuta/edit-sitio";
+	}
+	
+	@PostMapping("/sitioRuta/edit-sitio/{id}")
+	public String editSitioRuta(@PathVariable("id") String hash, @Valid @ModelAttribute("sitio") Tmio1SitiosRutaPK sitio, BindingResult bindingResult, Model model) {
+		
+		Tmio1SitiosRuta ser = sitioDelegate.getByID(tempHash);
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("sitioRuta",sitioDelegate.getByID(hash));
+			model.addAttribute("ruotes", sitioDelegate.getAllRoutes());	
+			model.addAttribute("sitios", sitioDelegate.getAllSitio());
+			tempHash = hash;
+			model.addAttribute("tempHash", tempHash);	
+			return "/sitioRuta/edit-sitio";
+		}
+		Tmio1SitiosRuta s= new Tmio1SitiosRuta();
+		s.setId(sitio);
+		s.setHash(sitio.hashCode());
+		s.setTmio1Ruta1(sitioDelegate.findRutaByID(sitio.getIdRuta()));
+		s.setTmio1Sitio1(sitioDelegate.findSitioByID(sitio.getIdSitio()));		
+		sitioDelegate.saveSitio(s);
+		sitioDelegate.delete(ser);
+		return "redirect:/sitioRuta/";
+	}
 	@PostMapping("/sitioRuta/add-sitioRuta/")
 	public String saveSitioRuta(@Valid @ModelAttribute("sitio") Tmio1SitiosRutaPK sitio, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {
@@ -52,29 +88,14 @@ public class SitioRutaController {
 		n.setId(sitio);
 		n.setHash(sitio.hashCode());
 		n.setTmio1Ruta1(sitioDelegate.findRutaByID(sitio.getIdRuta()));
-		n.setTmio1Ruta1(sitioDelegate.findSitioByID(sitio.getIdSitio()));
+		n.setTmio1Sitio1(sitioDelegate.findSitioByID(sitio.getIdSitio()));
 		sitioDelegate.saveSitio(n);
-		return "redirect:/sitio/";
+		return "redirect:/sitioRuta/";
 	}
-	@GetMapping("/sitioRuta/edit-sitio/{id}")
-	public String editSitioRuta(@PathVariable("id") String id,Model model){
-		model.addAttribute("sitioRuta",sitioDelegate.getByID(id));	
-		return "/sitioRuta/edit-sitio";
-	}
-	
-	@PostMapping("/sitioRuta/edit-sitio/")
-	public String editSitioRuta(@Valid @ModelAttribute("sitio") Tmio1SitiosRutaPK sitio, BindingResult bindingResult, Model model) {
-		if(bindingResult.hasErrors()) {
-			model.addAttribute("sitio",sitio);
-			return "/sitio/edit-sitio";
-		}
-		sitioDelegate.updateSitio(sitio);
-		return "redirect:/sitio/";
-	}
-	
-	@DeleteMapping("/sitioRuta/delete-sitio/{id}")
+	@PostMapping("/sitioRuta/delete-sitio/{id}")
 	public String deleteSitioRuta(@PathVariable("id") String id,Model model){
-		sitioDelegate.removeSitio(sitioDelegate.findById(Integer.parseInt(id)));
-		return "/sitio/";
+		Tmio1SitiosRuta ser = sitioDelegate.getByID(id);
+		sitioDelegate.delete(ser);
+		return "/sitioRuta/";
 	}
 }

@@ -11,6 +11,7 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
 
 @Component
@@ -158,10 +159,10 @@ public class SitioRutaDelegate {
 		}
 		return null;
 	}
-	public Tmio1Ruta findSitioByID(Integer idSitio) {
-		ResponseEntity<TransactionBody<Tmio1Ruta>> response= null;
+	public Tmio1Sitio findSitioByID(Integer idSitio) {
+		ResponseEntity<TransactionBody<Tmio1Sitio>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sito/"+idSitio,HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<Tmio1Ruta>>() {
+			response= rest.exchange(REST_URI+"/sitio/"+idSitio,HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -171,7 +172,7 @@ public class SitioRutaDelegate {
 			e.printStackTrace();
 		}
 		if(response!=null) {
-			Tmio1Ruta ruta= response.getBody().getBody();
+			Tmio1Sitio ruta= response.getBody().getBody();
 			return ruta;
 		}
 		return null;
