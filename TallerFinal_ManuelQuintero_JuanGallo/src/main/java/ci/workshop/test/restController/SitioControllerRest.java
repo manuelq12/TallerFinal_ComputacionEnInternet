@@ -45,7 +45,7 @@ public class SitioControllerRest {
 		sitioService.saveSitio(sitio);
 		return sitio;
 	}
-	@PatchMapping("api/sitio/edit")
+	@PatchMapping("api/sitio/e")
 	public Tmio1Sitio updateSitio(@RequestBody Tmio1Sitio sitio) {
 		sitioService.updateSitio(sitio);
 		return sitio;

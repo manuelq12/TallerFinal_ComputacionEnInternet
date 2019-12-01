@@ -2,10 +2,13 @@ package ci.workshop.test.delegate;
 
 import java.util.List;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
@@ -59,8 +62,10 @@ public class SitioDelegate {
 		return "Enviado";		
 	}
 	public String updateSitio(Tmio1Sitio nuevo) {
+		HttpClient client = HttpClients.createDefault();
+		rest.setRequestFactory(new HttpComponentsClientHttpRequestFactory(client));
 		try {
-			Tmio1Sitio x = rest.patchForObject(REST_URI + "/sitio", nuevo, Tmio1Sitio.class);	
+			Tmio1Sitio x = rest.patchForObject(REST_URI + "/sitio/e", nuevo, Tmio1Sitio.class);	
 		}
 		catch (Exception e) {
 			// TODO: handle exception
