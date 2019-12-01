@@ -69,4 +69,23 @@ public class RutaDelegate {
 		}
 		return "Error";
 	}
+	public List<String> findAllStates() {
+		ResponseEntity<TransactionBody<List<String>>> response= null;
+		try {
+			response= rest.exchange(REST_URI+"/rute/states",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<String>>>() {
+			});
+		} catch (HttpStatusCodeException e) {
+			int statusCode=e.getStatusCode().value();
+			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
+			e.printStackTrace();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if(response!=null) {
+			List<String> rutes= response.getBody().getBody();
+			return rutes;
+		}
+		return null;
+		
+	}
 }

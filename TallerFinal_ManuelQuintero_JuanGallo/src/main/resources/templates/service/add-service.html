@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Add Service</title>
-</head>
-<body>
-<div>
-<div>
-<form action="#" th:object = "${service}" th:action = @{/service/add-service} method = "post" >
 
-<label for = "id">Id</label>
-<input type = "hidden" id = "id">
-<label for = "busId">Bus ID</label>
-<select id  = "busId" th:field = "*{idBus}">
-<option th:each = "bus:${buses}" th:selected = "${service.idBus = bus.id}" th:value = "${bus.id}"
-		th:text = ${bus.id}></option>
-</select>
-<span th:if="${#fields.hasErrors('idBus')}" th:errors="*{idBus}" class="text-danger"></span>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Add Service</title>
+</head>
+
+<body>
+	<div>
+		<div>
+			<form action="#" th:object="${service}" th:action=@{/service/add-service} method="post">
+
+				<label for="id">Id</label>
+				<input type="hidden" id="id">
+				<label for="busId">Bus ID</label>
+				<select id="busId" th:field="*{idBus}">
+					<option th:each="bus:${buses}" th:selected="${service.idBus = bus.id}" th:value="${bus.id}"
+						th:text=${bus.id}></option>
+				</select>
+				<span th:if="${#fields.hasErrors('idBus')}" th:errors="*{idBus}" class="text-danger"></span>
 <label for = "rutaId">Ruta ID</label>
 <select id  = "rutaId" th:field = "*{idRuta}">
 <option th:each = "route:${routes}" th:selected = "${service.idRuta = route.id}" th:value = "${route.id}"

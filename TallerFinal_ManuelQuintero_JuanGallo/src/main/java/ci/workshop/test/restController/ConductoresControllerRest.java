@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import ci.workshop.test.delegate.TransactionBody;
+import ci.workshop.test.model.Tmio1Bus;
 import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.service.TMioConductorService;
 
@@ -23,28 +25,31 @@ public class ConductoresControllerRest {
 	public ConductoresControllerRest(TMioConductorService con) {
 		conductorService= con;
 	}
-	@RequestMapping(path="/driver/{id}")
-	public Tmio1Conductore findById(@PathVariable("id") String id) {
-		int codigo;
+	@RequestMapping(path="api/driver/{id}")
+	public TransactionBody<Tmio1Conductore> findById(@PathVariable("id") String id) {
 		try {
-			codigo= Integer.parseInt(id);
-			return conductorService.finbyID(id);
+			TransactionBody<Tmio1Conductore> tb = new TransactionBody<Tmio1Conductore>();
+			tb.setBody(conductorService.finbyID(id));
+			return tb;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	@RequestMapping(path="/driver/all")
-	public List<Tmio1Conductore> findAll() {
+	@RequestMapping(path="api/driver/all")
+	public TransactionBody<List<Tmio1Conductore>> findAll() {
 		try {
-			return (List<Tmio1Conductore>) conductorService.findAll();
+			TransactionBody<List<Tmio1Conductore>> tb = new TransactionBody<List<Tmio1Conductore>>();
+			tb.setBody((List<Tmio1Conductore>) conductorService.findAll());
+			return tb;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
+	
 //    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
-	@PostMapping(path= "/driver/add")
+	@PostMapping(path= "api/driver/add")
 	public ResponseEntity<Object> addConductore(@RequestBody Tmio1Conductore driver) throws Exception 
     {       
     	conductorService.saveDriver(driver);

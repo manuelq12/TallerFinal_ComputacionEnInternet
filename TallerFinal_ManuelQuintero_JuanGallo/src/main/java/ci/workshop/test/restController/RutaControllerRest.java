@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import ci.workshop.test.delegate.TransactionBody;
+import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.model.Tmio1Ruta;
 import ci.workshop.test.service.TMioRutaService;
 
@@ -24,25 +26,42 @@ public class RutaControllerRest {
 	}
 	
 	@RequestMapping(path="/rute/{id}")
-	public Tmio1Ruta findById(@PathVariable("id") String id) {
+	public TransactionBody<Tmio1Ruta> findById(@PathVariable("id") String id) {
 		int codigo;
 		try {
 			codigo= Integer.parseInt(id);
-			return rutaService.findByID(codigo);
+			TransactionBody<Tmio1Ruta> tb = new TransactionBody<Tmio1Ruta>();
+			tb.setBody(rutaService.findByID(codigo));
+			return tb;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 	@RequestMapping(path="/rute/all")
-	public List<Tmio1Ruta> findAll() {
+	public TransactionBody<List<Tmio1Ruta>> findAll() {
 		try {
-			return (List<Tmio1Ruta>) rutaService.findAll();
+			TransactionBody<List<Tmio1Ruta>> tb = new TransactionBody<List<Tmio1Ruta>>();
+			tb.setBody((List<Tmio1Ruta>) rutaService.findAll());
+			return tb;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
+	@RequestMapping(path="/rute/states")
+	public TransactionBody<List<String>> findStates() {
+		try {
+			TransactionBody<List<String>> tb = new TransactionBody<List<String>>();
+			tb.setBody((List<String>) rutaService.findAllStates());
+			return tb;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
 //    @PostMapping(path= "bus/save", consumes = "application/json", produces = "application/json")
 	@PostMapping(path= "/rute/add")
 	public ResponseEntity<Object> addRuta(@RequestBody Tmio1Ruta rute) throws Exception 

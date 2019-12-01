@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import ci.workshop.test.delegate.RutaDelegate;
 import ci.workshop.test.model.Tmio1Ruta;
 import ci.workshop.test.service.TMioRutaService;
 import lombok.Data;
@@ -17,25 +18,25 @@ import lombok.Data;
 @Data
 public class RouteController {
 
-	TMioRutaService routeService;
+	RutaDelegate rutaDelegate;
 	
 	@Autowired
-	public RouteController(TMioRutaService rutaS) {
+	public RouteController(RutaDelegate rutaS) {
 		// TODO Auto-generated constructor stub
-		routeService = rutaS;
+		rutaDelegate = rutaS;
 	}
 	
 	
 	@GetMapping("/route/")
 	public String indexRuta(Model model) {
-		model.addAttribute("routes",routeService.findAll());
+		model.addAttribute("routes",rutaDelegate.findAll());
 		return "/route/index";
 	}
 	
 	@GetMapping("/route/add-route")
 	public String addRuta(Model model) {
 		
-		model.addAttribute("states",routeService.findAllStates());
+		model.addAttribute("states",rutaDelegate.findAllStates());
 		model.addAttribute("route", new Tmio1Ruta());
 		
 		
@@ -46,12 +47,11 @@ public class RouteController {
 	@PostMapping("/route/add-route")
 	public String saveRuta(@Valid Tmio1Ruta ruta, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("states",routeService.findAllStates());
+			model.addAttribute("states",rutaDelegate.findAllStates());
 			model.addAttribute("route", ruta);
 			return "/route/add-route";
 		}
-		
-		routeService.saveRoute(ruta);
+		rutaDelegate.saveRute(ruta);
 		return"redirect:/route/";
 	}
 	

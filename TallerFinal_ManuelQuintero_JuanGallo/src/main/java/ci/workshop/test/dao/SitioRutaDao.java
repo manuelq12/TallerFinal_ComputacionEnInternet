@@ -8,6 +8,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
 
 @Repository
@@ -37,5 +39,9 @@ public class SitioRutaDao implements ISitioRutaDao {
 	@Override
 	public void delete(Tmio1SitiosRuta sitio) {
 		entityManager.remove(sitio);
+	}
+	
+	public Tmio1SitiosRuta findByID(String id) {
+		return entityManager.find(Tmio1SitiosRuta.class, Integer.parseInt(id));
 	}
 }
