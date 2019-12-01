@@ -71,22 +71,6 @@ public class SitioRutaDelegate {
 		}
 		return "Error";
 	}
-	public void delete(Tmio1SitiosRuta sitio) {
-		TransactionBody<Tmio1SitiosRuta> transaction= new TransactionBody<>("apiContext", sitio);
-		HttpEntity<TransactionBody<Tmio1SitiosRuta>> request= new HttpEntity<>(transaction);
-		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> response= null;
-		try {
-			response= rest.exchange(REST_URI+"/sitio/"+sitio.getId(), HttpMethod.DELETE,request, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
-			});
-		}catch (HttpStatusCodeException e) {
-			int statusCode=e.getStatusCode().value();
-			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		response.getBody();
-	}
 	public List<String> getAllRoutes() {
 		ResponseEntity<TransactionBody<List<String>>> response= null;
 		try {
@@ -176,5 +160,8 @@ public class SitioRutaDelegate {
 			return ruta;
 		}
 		return null;
+	}
+	public void delete(String id) {
+		rest.delete(REST_URI + "/sitioRuta/delete/"+id);
 	}
 }

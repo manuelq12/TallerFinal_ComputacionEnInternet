@@ -57,10 +57,15 @@ public class SitioRutaController {
 		return "/sitioRuta/edit-sitio";
 	}
 	
+	@GetMapping("/sitioRuta/delete-sitio/{id}")
+	public String deleteSitioRuta(@PathVariable("id") String id,Model model){
+		sitioDelegate.delete(id);
+		return "/sitioRuta/";
+	}
+	
 	@PostMapping("/sitioRuta/edit-sitio/{id}")
 	public String editSitioRuta(@PathVariable("id") String hash, @Valid @ModelAttribute("sitio") Tmio1SitiosRutaPK sitio, BindingResult bindingResult, Model model) {
 		
-		Tmio1SitiosRuta ser = sitioDelegate.getByID(tempHash);
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("sitioRuta",sitioDelegate.getByID(hash));
 			model.addAttribute("ruotes", sitioDelegate.getAllRoutes());	
@@ -75,7 +80,7 @@ public class SitioRutaController {
 		s.setTmio1Ruta1(sitioDelegate.findRutaByID(sitio.getIdRuta()));
 		s.setTmio1Sitio1(sitioDelegate.findSitioByID(sitio.getIdSitio()));		
 		sitioDelegate.saveSitio(s);
-		sitioDelegate.delete(ser);
+		sitioDelegate.delete(tempHash);
 		return "redirect:/sitioRuta/";
 	}
 	@PostMapping("/sitioRuta/add-sitioRuta/")
@@ -92,10 +97,6 @@ public class SitioRutaController {
 		sitioDelegate.saveSitio(n);
 		return "redirect:/sitioRuta/";
 	}
-	@PostMapping("/sitioRuta/delete-sitio/{id}")
-	public String deleteSitioRuta(@PathVariable("id") String id,Model model){
-		Tmio1SitiosRuta ser = sitioDelegate.getByID(id);
-		sitioDelegate.delete(ser);
-		return "/sitioRuta/";
-	}
+	
+	
 }

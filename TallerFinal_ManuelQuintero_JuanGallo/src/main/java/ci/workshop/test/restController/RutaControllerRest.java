@@ -1,19 +1,15 @@
 package ci.workshop.test.restController;
 
-import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import ci.workshop.test.delegate.TransactionBody;
-import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.model.Tmio1Ruta;
 import ci.workshop.test.service.TMioRutaService;
 
@@ -24,7 +20,6 @@ public class RutaControllerRest {
 	public RutaControllerRest(TMioRutaService rutaServ) {
 		rutaService= rutaServ;
 	}
-	
 	@RequestMapping(path="api/rute/{id}")
 	public TransactionBody<Tmio1Ruta> findById(@PathVariable("id") String id) {
 		int codigo;
@@ -60,8 +55,6 @@ public class RutaControllerRest {
 		}
 		return null;
 	}
-	
-	
 	@PostMapping(path= "api/rute")
 	public Tmio1Ruta addRuta (@RequestBody Tmio1Ruta rute) throws Exception 
     {       
@@ -69,5 +62,11 @@ public class RutaControllerRest {
 		return rute;
 		
     }
-	
+	@DeleteMapping("/api/rute/delete/{id}")
+	public Tmio1Ruta deleteRuta(@PathVariable("id") String id)
+    {       
+		Tmio1Ruta r= rutaService.findByID(Integer.parseInt(id));
+		rutaService.removeRuta(r);
+		return r;
+    }
 }
