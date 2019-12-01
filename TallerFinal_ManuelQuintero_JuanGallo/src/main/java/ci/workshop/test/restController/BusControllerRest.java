@@ -49,6 +49,7 @@ public class BusControllerRest {
 		return (List<Tmio1Bus>) busService.findAll();
 	}
 	
+<<<<<<< Updated upstream
 //	@RequestMapping(value="/api/bus/buses/", method = RequestMethod.GET)
 //	@ResponseBody
 //	public TransactionBody<List<String>> findAllTypes() {
@@ -63,6 +64,10 @@ public class BusControllerRest {
 	
 	@GetMapping("/api/bus/buses/")
 	public TransactionBody<List<String>> findAllTypesTP() {
+=======
+	@GetMapping("/api/bus/buses")
+	public TransactionBody<List<String>> findAllTypes() {
+>>>>>>> Stashed changes
 		TransactionBody<List<String>> tb = new TransactionBody<List<String>>();
 		tb.setBody((List<String>) busService.findAllTypes());
 		return tb;
