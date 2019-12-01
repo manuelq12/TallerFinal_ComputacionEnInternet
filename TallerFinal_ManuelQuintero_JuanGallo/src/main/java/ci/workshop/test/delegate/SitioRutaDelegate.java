@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
+import ci.workshop.test.model.Tmio1Bus;
 import ci.workshop.test.model.Tmio1Ruta;
 import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
@@ -38,21 +39,11 @@ public class SitioRutaDelegate {
 		return null;
 	}
 	public String saveSitio(Tmio1SitiosRuta nuevo) {
-		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> response= null;
-		try {
-			response= rest.exchange(REST_URI+"/sitioRuta/", HttpMethod.POST,null, new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
-			});
-		}catch (HttpStatusCodeException e) {
-			int statusCode=e.getStatusCode().value();
-			System.out.println("ERROR: " + statusCode+ " "+ e.getResponseBodyAsString());
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
+		Tmio1SitiosRuta sitioRuta = rest.postForEntity(REST_URI + "/sitioRuta", nuevo, Tmio1SitiosRuta.class).getBody();
+		if(sitioRuta == null) {
+			return "Fallo";
 		}
-		if(response!=null && response.getBody().getBody() !=null) {
-			return "Guardado!";
-		}
-		return "Error";
+		return "Guardado";
 	}
 	public String updateSitio(Tmio1SitiosRuta nuevo) {
 		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> response= null;

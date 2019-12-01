@@ -71,10 +71,9 @@ public class SitioRutaRestController {
 	}
 	
 	@RequestMapping(path="/sitioRuta/add")
-	public ResponseEntity<Object> saveSitioRuta(@RequestBody Tmio1SitiosRuta sitio) {
+	public Tmio1SitiosRuta saveSitioRuta(@RequestBody Tmio1SitiosRuta sitio) {
 		sitioRutaService.saveSitio(sitio);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(sitio.getId()).toUri();
-        return ResponseEntity.created(location).build();
+        return sitio;
 	}
 	
 	@RequestMapping(path="api/sitioRuta/{id}")
