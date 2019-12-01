@@ -55,4 +55,7 @@ public class ConductoresDelegate {
 		Tmio1Conductore driver = rest.postForEntity(REST_URI + "/driver", nuevo, Tmio1Conductore.class).getBody();
 		return "Enviado";
 	}
+	public void removeConductores(String id) {
+		rest.delete(REST_URI + "/driver/delete/"+id);		
+	}
 }

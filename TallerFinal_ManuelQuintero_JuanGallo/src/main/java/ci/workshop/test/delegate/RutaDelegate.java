@@ -75,4 +75,7 @@ public class RutaDelegate {
 		return null;
 		
 	}
+	public void removeRuta(String id) {
+		rest.delete(REST_URI + "/rute/delete/"+id);		
+	}
 }
