@@ -13,5 +13,12 @@ public class DateObject {
 	private LocalDate fechaInicio;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaFin;
+	public DateObject(LocalDate fechaInicio, LocalDate fechaFin) {
+		super();
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+	}
+	
+	
 	
 }

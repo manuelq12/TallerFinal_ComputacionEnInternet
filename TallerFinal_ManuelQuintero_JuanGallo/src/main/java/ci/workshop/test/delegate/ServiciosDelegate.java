@@ -192,8 +192,7 @@ public class ServiciosDelegate {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public void delete(Tmio1Servicio ser) {
-		// TODO Auto-generated method stub
-		
+	public void delete(String ser) {
+		rest.delete(REST_URI + "/service/delete/" + ser);
 	}
 }

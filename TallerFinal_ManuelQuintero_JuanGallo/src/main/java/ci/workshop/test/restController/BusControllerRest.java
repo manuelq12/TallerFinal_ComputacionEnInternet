@@ -69,9 +69,10 @@ public class BusControllerRest {
     }
 	
 	@DeleteMapping("/api/bus/delete/{id}")
-	public void deleteBus (@PathVariable("id") String id)
+	public Tmio1Bus deleteBus (@PathVariable("id") String id)
     {       
 		Tmio1Bus bus = busService.findById(Integer.parseInt(id));
 		busService.removeBus(bus);
+		return bus;
     }
 }
