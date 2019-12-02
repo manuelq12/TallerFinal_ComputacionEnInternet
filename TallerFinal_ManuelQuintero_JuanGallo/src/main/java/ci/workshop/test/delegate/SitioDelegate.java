@@ -59,7 +59,7 @@ public class SitioDelegate {
 	}
 	public String saveSitio(Tmio1Sitio nuevo) {
 		Tmio1Sitio x = rest.postForEntity(REST_URI + "/sitio", nuevo, Tmio1Sitio.class).getBody();
-		return "Enviado";		
+		return "Guardado";		
 	}
 	public void removeSitio(String id) {
 		rest.delete(REST_URI + "/sitio/delete/"+id);		

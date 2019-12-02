@@ -54,7 +54,7 @@ public class RutaDelegate {
 	}
 	public String saveRute(Tmio1Ruta nuevo) {
 		Tmio1Ruta rute = rest.postForEntity(REST_URI + "/rute", nuevo, Tmio1Ruta.class).getBody();
-		return "Enviado";
+		return "Guardado";
 	}
 	public List<String> findAllStates() {
 		ResponseEntity<TransactionBody<List<String>>> response= null;

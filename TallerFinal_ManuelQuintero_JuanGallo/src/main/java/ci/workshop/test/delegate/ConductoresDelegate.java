@@ -53,7 +53,7 @@ public class ConductoresDelegate {
 	}
 	public String saveDriver(Tmio1Conductore nuevo) {
 		Tmio1Conductore driver = rest.postForEntity(REST_URI + "/driver", nuevo, Tmio1Conductore.class).getBody();
-		return "Enviado";
+		return "Guardado";
 	}
 	public void removeConductores(String id) {
 		rest.delete(REST_URI + "/driver/delete/"+id);		
