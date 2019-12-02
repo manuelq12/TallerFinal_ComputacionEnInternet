@@ -1,5 +1,6 @@
 package ci.workshop.test.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ci.workshop.test.dao.SitioRutaDao;
@@ -10,6 +11,7 @@ import ci.workshop.test.model.Tmio1SitiosRuta;
 @Service
 public class TMioSitioRutaService implements ITMioSitioRutaService{
 
+	@Autowired
 	private SitioRutaDao sitioDao;
 	
 	@Override

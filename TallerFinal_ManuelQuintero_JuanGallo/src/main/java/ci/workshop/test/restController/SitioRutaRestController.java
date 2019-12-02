@@ -1,24 +1,19 @@
 package ci.workshop.test.restController;
 
-import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import ci.workshop.test.delegate.TransactionBody;
-import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.model.Tmio1Ruta;
-import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
 import ci.workshop.test.service.TMioRutaService;
-import ci.workshop.test.service.TMioServicioService;
 import ci.workshop.test.service.TMioSitioRutaService;
 import ci.workshop.test.service.TMioSitioService;
 
@@ -27,6 +22,7 @@ public class SitioRutaRestController {
 	TMioSitioRutaService sitioRutaService;
 	TMioRutaService rutaService;
 	TMioSitioService sitioService;
+	
 	@Autowired
 	public SitioRutaRestController(TMioSitioRutaService sitioRutaService,TMioRutaService rutaService, TMioSitioService sitioService) {
 		this.sitioRutaService= sitioRutaService;
@@ -35,7 +31,7 @@ public class SitioRutaRestController {
 	}
 	
 
-	@RequestMapping(path="api/sitioRuta/all")
+	@GetMapping(path="api/sitioRuta/all")
 	public TransactionBody<List<Tmio1SitiosRuta>> findAll() {
 		try {
 			TransactionBody<List<Tmio1SitiosRuta>> tb = new TransactionBody<List<Tmio1SitiosRuta>>();

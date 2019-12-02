@@ -15,12 +15,13 @@ import ci.workshop.test.dao.ConductoresDao;
 import ci.workshop.test.dao.RutasDao;
 import ci.workshop.test.dao.ServiciosDao;
 import ci.workshop.test.dao.SitioDao;
+import ci.workshop.test.dao.SitioRutaDao;
 import ci.workshop.test.model.Tmio1Bus;
 import ci.workshop.test.model.Tmio1Conductore;
 import ci.workshop.test.model.Tmio1Ruta;
-import ci.workshop.test.model.Tmio1Servicio;
-import ci.workshop.test.model.Tmio1ServicioPK;
 import ci.workshop.test.model.Tmio1Sitio;
+import ci.workshop.test.model.Tmio1SitiosRuta;
+import ci.workshop.test.model.Tmio1SitiosRutaPK;
 import ci.workshop.test.model.User;
 import ci.workshop.test.model.UserType;
 import ci.workshop.test.service.UserService;
@@ -41,7 +42,7 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 
 	@Bean
 	public CommandLineRunner demo(ConductoresDao driverR, 
-			BusesDao busRepository, RutasDao routeR, SitioDao sitioDao, ServiciosDao serviceDao) {
+			BusesDao busRepository, RutasDao routeR, SitioDao sitioDao, ServiciosDao serviceDao, SitioRutaDao sitioRDao) {
 		return (args) -> {
 			//BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	        
@@ -183,6 +184,14 @@ public class TallerFinalManuelQuinteroJuanGalloApplication {
 			sitio.setDescripcion("Parada 1");
 			sitioDao.save(sitio);
 			
+			Tmio1SitiosRuta sR1 = new Tmio1SitiosRuta();
+			Tmio1SitiosRutaPK sRPK1 = new Tmio1SitiosRutaPK();
+			
+			sRPK1.setIdRuta(route1.getId());
+			sRPK1.setIdSitio((int) sitio.getId()); 
+			
+			sR1.setId(sRPK1);
+			sitioRDao.save(sR1);
 			
 			
 		};

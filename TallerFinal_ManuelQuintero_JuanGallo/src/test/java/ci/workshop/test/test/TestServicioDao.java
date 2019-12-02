@@ -36,7 +36,7 @@ import ci.workshop.test.model.Tmio1ServicioPK;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = TallerFinalManuelQuinteroJuanGalloApplication.class)
 @Rollback(false)
-public class TestServicio {
+public class TestServicioDao {
 
 	@Autowired
 	private IRutasDao rutasDao;

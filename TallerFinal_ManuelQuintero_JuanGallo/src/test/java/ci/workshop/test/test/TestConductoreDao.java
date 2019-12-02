@@ -28,7 +28,7 @@ import ci.workshop.test.model.Tmio1Servicio;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = TallerFinalManuelQuinteroJuanGalloApplication.class)
 @Rollback(false)
-public class TestConductore {
+public class TestConductoreDao {
 	@Autowired
 	private IConductoresDao conductDao;
 		

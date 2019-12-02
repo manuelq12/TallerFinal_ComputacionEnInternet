@@ -17,13 +17,13 @@ import ci.workshop.test.model.Tmio1SitiosRuta;
 
 @Component
 public class SitioRutaDelegate {
-	private RestTemplate rest;
+	private RestTemplate rest = new RestTemplate();
 	public static final String REST_URI="http://localhost:8080/api";
 	
 	public List<Tmio1SitiosRuta> findAll() {
 		ResponseEntity<TransactionBody<List<Tmio1SitiosRuta>>> response= null;
 		try {
-			response= rest.exchange(REST_URI+"/sitioRuta/",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1SitiosRuta>>>() {
+			response= rest.exchange(REST_URI+"/sitioRuta/all",HttpMethod.GET,null, new ParameterizedTypeReference<TransactionBody<List<Tmio1SitiosRuta>>>() {
 			});
 		} catch (HttpStatusCodeException e) {
 			int statusCode=e.getStatusCode().value();
@@ -33,6 +33,8 @@ public class SitioRutaDelegate {
 			e.printStackTrace();
 		}
 		if(response!=null) {
+			System.out.println(response);
+			System.out.println(response.getBody());
 			List<Tmio1SitiosRuta> sitio= response.getBody().getBody();
 			return sitio;
 		}
