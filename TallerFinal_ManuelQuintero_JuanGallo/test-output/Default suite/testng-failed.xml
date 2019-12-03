@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="ci.workshop.test.testDelegate.TestSitioDelegate">
+      <class name="ci.workshop.test.testDelegate.TestServicioDelegate">
         <methods>
-          <include name="testUpdate"/>
           <include name="initMocks"/>
+          <include name="testDelete"/>
         </methods>
-      </class> <!-- ci.workshop.test.testDelegate.TestSitioDelegate -->
+      </class> <!-- ci.workshop.test.testDelegate.TestServicioDelegate -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

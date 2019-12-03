@@ -46,10 +46,11 @@ public class SitioControllerRest {
 	}
 	
 	@DeleteMapping("/api/sitio/delete/{id}")
-	public Tmio1Sitio deleteSitio(@PathVariable("id") String id)
+	public void deleteSitio(@PathVariable("id") int id)
     {       
-		Tmio1Sitio r= sitioService.findById(Integer.parseInt(id));
+		Tmio1Sitio r= sitioService.findById(id);
+		System.out.println(id);
+		System.out.println(r);
 		sitioService.removeSitio(r);
-		return r;
     }
 }

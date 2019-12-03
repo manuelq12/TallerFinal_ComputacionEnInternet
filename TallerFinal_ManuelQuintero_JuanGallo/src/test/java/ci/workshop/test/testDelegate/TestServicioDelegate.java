@@ -170,7 +170,7 @@ public class TestServicioDelegate {
 	}
 
 	@Test
-	public void testFindById() {
+	public void testFindByHash() {
 		Tmio1Bus bus1 = new Tmio1Bus();
 		bus1.setCapacidad(new BigDecimal(5000));
 		bus1.setMarca("Mercedes-Benz");
@@ -205,10 +205,10 @@ public class TestServicioDelegate {
 		TransactionBody<Tmio1Servicio> tb = new TransactionBody<Tmio1Servicio>();
 		tb.setBody(newService);
 		ResponseEntity<TransactionBody<Tmio1Servicio>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-		when(rest.exchange(serviceDel.REST_URI + "/sitioRuta/" + newService.getHash(), HttpMethod.GET, null,
+		when(rest.exchange(serviceDel.REST_URI + "/service/" + newService.getHash(), HttpMethod.GET, null,
 				new ParameterizedTypeReference<TransactionBody<Tmio1Servicio>>() {
 				})).thenReturn(re);
-		Tmio1Servicio actual = serviceDel.findById(newService.getHash() + "");
+		Tmio1Servicio actual = serviceDel.findByHash(newService.getHash() + "");
 		assertEquals(actual, newService);
 	}
 
@@ -248,13 +248,13 @@ public class TestServicioDelegate {
 		TransactionBody<Tmio1Servicio> tb = new TransactionBody<Tmio1Servicio>();
 		tb.setBody(newService);
 		ResponseEntity<TransactionBody<Tmio1Servicio>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-		when(rest.exchange(serviceDel.REST_URI + "/sitioRuta/" + newService.getHash(), HttpMethod.GET, null,
+		when(rest.exchange(serviceDel.REST_URI + "/service/" + newService.getHash(), HttpMethod.GET, null,
 				new ParameterizedTypeReference<TransactionBody<Tmio1Servicio>>() {
 				})).thenReturn(re);
-		Tmio1Servicio actual = serviceDel.findById(newService.getHash() + "");
+		Tmio1Servicio actual = serviceDel.findByHash(newService.getHash() + "");
 		assertEquals(actual, newService);
 		serviceDel.delete(newService.getHash() + "");
-		assertNull(serviceDel.findById(newService.getHash() + ""));
+		assertNull(serviceDel.findByHash(newService.getHash() + ""));
 	}
 
 	public void testfindByFechas() {

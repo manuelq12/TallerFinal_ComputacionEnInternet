@@ -62,6 +62,7 @@ public class SitioDelegate {
 		return "Guardado";		
 	}
 	public void removeSitio(String id) {
+		System.out.println("Del: " + id);
 		rest.delete(REST_URI + "/sitio/delete/"+id);		
 	}
 	

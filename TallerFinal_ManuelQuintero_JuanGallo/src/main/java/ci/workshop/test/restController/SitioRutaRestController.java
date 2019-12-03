@@ -6,13 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ci.workshop.test.delegate.TransactionBody;
 import ci.workshop.test.model.Tmio1Ruta;
+import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
+import ci.workshop.test.model.Tmio1SitiosRutaPK;
 import ci.workshop.test.service.TMioRutaService;
 import ci.workshop.test.service.TMioSitioRutaService;
 import ci.workshop.test.service.TMioSitioService;
@@ -55,10 +58,10 @@ public class SitioRutaRestController {
 		return null;
 	}
 	@RequestMapping(path="api/sitioRuta/sitios")
-	public TransactionBody<List<Tmio1Ruta>> findAllSitio() {
+	public TransactionBody<List<Tmio1Sitio>> findAllSitio() {
 		try {
-			TransactionBody<List<Tmio1Ruta>> tb = new TransactionBody<List<Tmio1Ruta>>();
-			tb.setBody((List<Tmio1Ruta>)rutaService.findAll());
+			TransactionBody<List<Tmio1Sitio>> tb = new TransactionBody<List<Tmio1Sitio>>();
+			tb.setBody((List<Tmio1Sitio>)sitioService.findAll());
 			return tb;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,7 +69,7 @@ public class SitioRutaRestController {
 		return null;
 	}
 	
-	@RequestMapping(path="/sitioRuta/add")
+	@PostMapping("/api/sitioRuta")
 	public Tmio1SitiosRuta saveSitioRuta(@RequestBody Tmio1SitiosRuta sitio) {
 		sitioRutaService.saveSitio(sitio);
         return sitio;
@@ -77,6 +80,17 @@ public class SitioRutaRestController {
 		try {
 			TransactionBody<Tmio1SitiosRuta> tb = new TransactionBody<Tmio1SitiosRuta>();
 			tb.setBody(sitioRutaService.findById(id));
+			return tb;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	@RequestMapping(path="api/sitioRuta/pk/{id}")
+	public TransactionBody<Tmio1SitiosRutaPK> findByIDPK(@PathVariable("id") String id) {
+		try {
+			TransactionBody<Tmio1SitiosRutaPK> tb = new TransactionBody<Tmio1SitiosRutaPK>();
+			tb.setBody(sitioRutaService.findById(id).getId());
 			return tb;
 		} catch (Exception e) {
 			e.printStackTrace();

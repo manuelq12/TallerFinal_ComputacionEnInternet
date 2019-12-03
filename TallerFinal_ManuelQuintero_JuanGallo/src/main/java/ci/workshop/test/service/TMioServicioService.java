@@ -42,23 +42,33 @@ public class TMioServicioService implements ITMioServicioService{
 	boolean driverDateInicio = false;
 	boolean driverDateFinal = false;
 	boolean serviceDateCorrespond = false;
+	Tmio1Conductore con = null;
 	if(service != null) {
-			if(service.getTmio1Bus() != null) {
-				
-				busExist =  !busRepos.findById(service.getId().getIdBus()).equals(null);
 
-				if(service.getTmio1Conductore() != null) {
+			if(service.getId().getIdBus() != null) {
+
+				busExist =  !busRepos.findById(service.getId().getIdBus()).equals(null);
+	
+				if(!service.getId().getCedulaConductor().equals(null)) {
+
 					driverExist = !driverRepos.findById(service.getId().getCedulaConductor()).equals(null);
+					if(driverExist) {
+						con = driverRepos.findById(service.getId().getCedulaConductor());
+					}
+					else {
+						
+					}
 
 					if(service.getId().getFechaInicio() != null &&  service.getId().getFechaFin() != null && driverExist
-							&& service.getTmio1Conductore().getFechaContratacion() != null) {
-						
-						driverDateInicio = service.getId().getFechaInicio().isAfter(service.getTmio1Conductore().getFechaContratacion());
-						driverDateFinal = service.getId().getFechaFin().isAfter(service.getTmio1Conductore().getFechaContratacion());
+							&& con.getFechaContratacion() != null) {
+
+						driverDateInicio = service.getId().getFechaInicio().isAfter(con.getFechaContratacion());
+						driverDateFinal = service.getId().getFechaFin().isAfter(con.getFechaContratacion());
 						serviceDateCorrespond = service.getId().getFechaInicio().isBefore( service.getId().getFechaFin());
 						
-						if(service.getTmio1Ruta()!=null) {
-							routeExist = !routeRepos.findById(service.getTmio1Ruta().getId()).equals(null);
+						if(service.getId().getIdRuta() !=null) {
+
+							routeExist = !routeRepos.findById(service.getId().getIdRuta()).equals(null);
 						}
 						
 					}
@@ -70,6 +80,11 @@ public class TMioServicioService implements ITMioServicioService{
 		if(busExist && driverExist && routeExist && driverDateInicio && driverDateFinal
 				&& serviceDateCorrespond) {
 			valid  = true;
+			if(valid = true) {
+				service.setTmio1Bus(busRepos.findById(service.getId().getIdBus()));
+				service.setTmio1Conductore(con);
+				service.setTmio1Ruta(routeRepos.findById(service.getId().getIdRuta()));
+			}
 		}
 		return valid;
 	}

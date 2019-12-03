@@ -3,6 +3,8 @@ package ci.workshop.test.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the tmio1_sitios_rutas database table.
@@ -30,20 +32,24 @@ public class Tmio1SitiosRuta implements Serializable {
 	//bi-directional many-to-one association to Tmio1Ruta
 	@ManyToOne
 	@JoinColumn(name="id_ruta", insertable=false, updatable=false)
+	@JsonIgnore
 	private Tmio1Ruta tmio1Ruta1;
 
 	//bi-directional many-to-one association to Tmio1Ruta
 	@ManyToOne
 	@JoinColumn(name="id_sitio", insertable=false, updatable=false)
+	@JsonIgnore
 	private Tmio1Ruta tmio1Ruta2;
 
 	//bi-directional many-to-one association to Tmio1Sitio
 	@ManyToOne
 	@JoinColumn(name="id_sitio", insertable=false, updatable=false)
+	@JsonIgnore
 	private Tmio1Sitio tmio1Sitio1;
 
 	@ManyToOne
 	@JoinColumn(name="id_sitio", insertable=false, updatable=false)
+	@JsonIgnore
 	private Tmio1Sitio tmio1Sitio2;
 
 	public Tmio1SitiosRuta() {

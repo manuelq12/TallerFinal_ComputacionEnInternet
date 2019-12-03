@@ -13,7 +13,7 @@
 		<div class="form-group col-md-6">
 				<label for = "rutaId">Ruta ID</label>
 				<select id  = "rutaId" th:field = "*{idRuta}">
-					<option th:each = "route:${routes}" th:selected = "${sitioRuta.idRuta = route}" th:value = "${route.id}"
+					<option th:each = "route:${routes}" th:selected = "${sitioRuta.idRuta = route.id}" th:value = "${route.id}"
 					th:text = ${route.id}></option>
 				</select>
 				<span th:if="${#fields.hasErrors('idRuta')}" th:errors="*{idRuta}" class="text-danger"></span>
@@ -21,7 +21,7 @@
 		<div class="form-group col-md-6">
 				<label for = "sitioId">Sitio ID</label>
 				<select id  = "sitioId" th:field = "*{idSitio}">
-					<option th:each = "sitio:${sitios}" th:selected = "${sitioRuta.idSitio = sitio}" th:value = "${sitio.id}"
+					<option th:each = "sitio:${sitios}" th:selected = "${sitioRuta.idSitio = sitio.id}" th:value = "${sitio.id}"
 					th:text = ${sitio.id}></option>
 				</select>
 				<span th:if="${#fields.hasErrors('idSitio')}" th:errors="*{idSitio}" class="text-danger"></span>

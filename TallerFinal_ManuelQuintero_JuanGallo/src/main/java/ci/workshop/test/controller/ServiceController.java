@@ -103,10 +103,7 @@ public class ServiceController {
 	
 	@PostMapping("/service/edit/{id}")
 	public String saveUpdateService(@PathVariable("id") String hash, Tmio1ServicioPK nuevo, BindingResult bindingResult,  Model model) {
-
-		Tmio1Servicio ser = service.findByHash(tempHash);
-	
-		
+			
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("buses", service.findAllBuses());
 			model.addAttribute("routes",service.findAllRoutes());
@@ -130,8 +127,8 @@ public class ServiceController {
 		s.setHash(s.getId().getHashId());
 	
 	
-		service.saveService(s);
-		service.delete(ser);
+		service.editService(s);
+		service.delete(tempHash);
 
 		return "redirect:/service/";
 	}
@@ -141,6 +138,12 @@ public class ServiceController {
 		model.addAttribute("dates", new DateObject());
 		model.addAttribute("services",service.findAllIDWithoutRepeatedFechaInicio());
 		return "/service/dates-search";
+	}
+	
+	@GetMapping("/service/delete-service/{id}")
+	public String deleteServicio(@PathVariable("id") String hash) {
+		service.delete(hash);
+		return "redirect:/service/";
 	}
 	
 	@PostMapping("/service/dates")

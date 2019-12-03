@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import ci.workshop.test.model.Tmio1Ruta;
 import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
+import ci.workshop.test.model.Tmio1SitiosRutaPK;
 
 @Component
 public class SitioRutaDelegate {
@@ -66,11 +67,11 @@ public class SitioRutaDelegate {
 		return "Error";
 	}
 
-	public List<String> getAllRoutes() {
-		ResponseEntity<TransactionBody<List<String>>> response = null;
+	public List<Tmio1Ruta> getAllRoutes() {
+		ResponseEntity<TransactionBody<List<Tmio1Ruta>>> response = null;
 		try {
 			response = rest.exchange(REST_URI + "/sitioRuta/routes", HttpMethod.GET, null,
-					new ParameterizedTypeReference<TransactionBody<List<String>>>() {
+					new ParameterizedTypeReference<TransactionBody<List<Tmio1Ruta>>>() {
 					});
 		} catch (HttpStatusCodeException e) {
 			int statusCode = e.getStatusCode().value();
@@ -80,17 +81,17 @@ public class SitioRutaDelegate {
 			e.printStackTrace();
 		}
 		if (response != null) {
-			List<String> sitio = response.getBody().getBody();
+			List<Tmio1Ruta> sitio = response.getBody().getBody();
 			return sitio;
 		}
 		return null;
 	}
 
-	public List<String> getAllSitio() {
-		ResponseEntity<TransactionBody<List<String>>> response = null;
+	public List<Tmio1Sitio> getAllSitio() {
+		ResponseEntity<TransactionBody<List<Tmio1Sitio>>> response = null;
 		try {
 			response = rest.exchange(REST_URI + "/sitioRuta/sitios", HttpMethod.GET, null,
-					new ParameterizedTypeReference<TransactionBody<List<String>>>() {
+					new ParameterizedTypeReference<TransactionBody<List<Tmio1Sitio>>>() {
 					});
 		} catch (HttpStatusCodeException e) {
 			int statusCode = e.getStatusCode().value();
@@ -100,7 +101,7 @@ public class SitioRutaDelegate {
 			e.printStackTrace();
 		}
 		if (response != null) {
-			List<String> sitio = response.getBody().getBody();
+			List<Tmio1Sitio> sitio = response.getBody().getBody();
 			return sitio;
 		}
 		return null;
@@ -168,5 +169,25 @@ public class SitioRutaDelegate {
     
 	public void delete(String id) {
 		rest.delete(REST_URI + "/sitioRuta/delete/" + id);
+	}
+
+	public Tmio1SitiosRutaPK getByIDPK(String id) {
+		ResponseEntity<TransactionBody<Tmio1SitiosRutaPK>> response = null;
+		try {
+			response = rest.exchange(REST_URI + "/sitioRuta/pk/" + id, HttpMethod.GET, null,
+					new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRutaPK>>() {
+					});
+		} catch (HttpStatusCodeException e) {
+			int statusCode = e.getStatusCode().value();
+			System.out.println("ERROR: " + statusCode + " " + e.getResponseBodyAsString());
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (response != null) {
+			Tmio1SitiosRutaPK sitio = response.getBody().getBody();
+			return sitio;
+		}
+		return null;
 	}
 }

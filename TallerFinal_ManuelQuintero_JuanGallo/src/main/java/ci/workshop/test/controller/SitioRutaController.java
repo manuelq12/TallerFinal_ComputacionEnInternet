@@ -19,6 +19,7 @@ import ci.workshop.test.model.Tmio1Sitio;
 import ci.workshop.test.model.Tmio1SitiosRuta;
 import ci.workshop.test.model.Tmio1SitiosRutaPK;
 import ci.workshop.test.service.TMioSitioRutaService;
+import javassist.expr.NewArray;
 import lombok.Data;
 
 @Controller
@@ -41,26 +42,28 @@ public class SitioRutaController {
 	}
 	@GetMapping("/sitioRuta/add-sitioRuta")
 	public String addSitioRuta(Model model){
-		model.addAttribute("ruotes", sitioDelegate.getAllRoutes());	
+		model.addAttribute("routes", sitioDelegate.getAllRoutes());	
 		model.addAttribute("sitios", sitioDelegate.getAllSitio());
+		model.addAttribute("sitioRuta", new Tmio1SitiosRutaPK());
+		
 		return "/sitioRuta/add-sitioRuta";
 	}
 	
 
 	@GetMapping("/sitioRuta/edit-sitio/{id}")
 	public String editSitioRuta(@PathVariable("id") String id,Model model){
-		model.addAttribute("sitioRuta",sitioDelegate.getByID(id));
-		model.addAttribute("ruotes", sitioDelegate.getAllRoutes());	
+		model.addAttribute("sitioRuta",new Tmio1SitiosRutaPK());
+		model.addAttribute("routes", sitioDelegate.getAllRoutes());	
 		model.addAttribute("sitios", sitioDelegate.getAllSitio());
 		tempHash = id;	
 		model.addAttribute("tempHash", tempHash);
-		return "/sitioRuta/edit-sitio";
+		return "/sitioRuta/update-SitioRuta";
 	}
 	
 	@GetMapping("/sitioRuta/delete-sitio/{id}")
 	public String deleteSitioRuta(@PathVariable("id") String id,Model model){
 		sitioDelegate.delete(id);
-		return "/sitioRuta/";
+		return "redirect:/sitioRuta/";
 	}
 	
 	@PostMapping("/sitioRuta/edit-sitio/{id}")
@@ -84,7 +87,7 @@ public class SitioRutaController {
 		return "redirect:/sitioRuta/";
 	}
 	@PostMapping("/sitioRuta/add-sitioRuta/")
-	public String saveSitioRuta(@Valid @ModelAttribute("sitio") Tmio1SitiosRutaPK sitio, BindingResult bindingResult, Model model) {
+	public String saveSitioRuta(@Valid @ModelAttribute("sitioRuta") Tmio1SitiosRutaPK sitio, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("sitioRuta",sitio);
 			return "/sitioRuta/add-sitioRuta";

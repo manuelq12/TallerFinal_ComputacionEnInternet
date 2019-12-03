@@ -45,11 +45,11 @@ public class SitioController {
 		return "redirect:/sitio/";
 	}
 	@GetMapping("/sitio/edit/{id}")
-	public String editSitio(@PathVariable("id") String id,Model model){
-		model.addAttribute("sitio",sitioDelegate.findById(Integer.parseInt(id)));	
+	public String editSitio(@PathVariable("id") int id,Model model){
+		model.addAttribute("sitio",sitioDelegate.findById(id));	
 		return "/sitio/edit-sitio";
 	}
-	@GetMapping("/sitio/delete-sitio/{id}")
+	@GetMapping("/sitio/delete/{id}")
 	public String deleteSitio(@PathVariable("id") String id) {
 		sitioDelegate.removeSitio(id);
 		return "redirect:/sitio/";
@@ -60,6 +60,7 @@ public class SitioController {
 			model.addAttribute("sitio",sitio);
 			return "/sitio/edit-sitio";
 		}
+		System.out.println(sitio.getId());
 		sitioDelegate.updateSitio(sitio);
 		return "redirect:/sitio/";
 	}
