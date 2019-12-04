@@ -23,131 +23,128 @@ import ci.workshop.test.service.TMioServicioService;
 @Controller
 public class ServiceController {
 
-	
 	private ServiciosDelegate service;
 	private String tempHash = "";
-	
-	 
+
 	@Autowired
 	public ServiceController(ServiciosDelegate s) {
 		// TODO Auto-generated constructor stub
 		service = s;
 	}
-	
+
 	@GetMapping("/login")
 	public String login() {
 		return "/customLogin";
 	}
-	
+
 	@GetMapping("/logout")
 	public String logout() {
 		return "/customLogin";
 	}
-	
+
 	@GetMapping("/service/")
 	public String index(Model model) {
-		
-		model.addAttribute("services",service.findAllID());
+
+		model.addAttribute("services", service.findAllID());
 		return "/service/index";
 	}
-	
+
 	@GetMapping("/service/add-service")
-	public String addService(Model model){
+	public String addService(Model model) {
 		model.addAttribute("buses", service.findAllBuses());
-		model.addAttribute("routes",service.findAllRoutes());
-		model.addAttribute("drivers",service.findAllDrivers());
+		model.addAttribute("routes", service.findAllRoutes());
+		model.addAttribute("drivers", service.findAllDrivers());
 		model.addAttribute("service", new Tmio1ServicioPK());
-		
+
 		return "/service/add-service";
 	}
-	
+
 	@PostMapping("/service/add-service")
-	public String saveService(@Valid @ModelAttribute Tmio1ServicioPK id, BindingResult bindingResult, Model model){
-		
-		if(bindingResult.hasErrors()) {
+	public String saveService(@Valid @ModelAttribute Tmio1ServicioPK id, BindingResult bindingResult, Model model) {
+
+		if (bindingResult.hasErrors()) {
 			model.addAttribute("buses", service.findAllBuses());
-			model.addAttribute("routes",service.findAllRoutes());
-			model.addAttribute("drivers",service.findAllDrivers());
+			model.addAttribute("routes", service.findAllRoutes());
+			model.addAttribute("drivers", service.findAllDrivers());
 			model.addAttribute("service", new Tmio1ServicioPK());
-			
+
 			return "/service/add-service";
 		}
 		Tmio1Bus bus = service.findByBusId(id.getIdBus());
 		Tmio1Conductore driver = service.findByDriverId(id.getCedulaConductor());
 		Tmio1Ruta route = service.findByRouteId(id.getIdRuta());
 		Tmio1Servicio s = new Tmio1Servicio();
-		
+
 		s.setId(id);
 		s.setTmio1Bus(bus);
 		s.setTmio1Conductore(driver);
 		s.setTmio1Ruta(route);
 		s.setHash(s.getId().getHashId());
-		
+
 		service.saveService(s);
-		
+
 		return "redirect:/service/";
 	}
-	
+
 	@GetMapping("/service/edit/{id}")
 	public String updateService(@PathVariable("id") String id, Model model) {
-		
-		tempHash = id;		
+
+		tempHash = id;
 		model.addAttribute("buses", service.findAllBuses());
-		model.addAttribute("routes",service.findAllRoutes());
-		model.addAttribute("drivers",service.findAllDrivers());
+		model.addAttribute("routes", service.findAllRoutes());
+		model.addAttribute("drivers", service.findAllDrivers());
 		model.addAttribute("tempHash", tempHash);
 		model.addAttribute("service", new Tmio1ServicioPK());
-		
+
 		return "/service/update-service";
 	}
-	
+
 	@PostMapping("/service/edit/{id}")
-	public String saveUpdateService(@PathVariable("id") String hash, Tmio1ServicioPK nuevo, BindingResult bindingResult,  Model model) {
-			
-		if(bindingResult.hasErrors()) {
+	public String saveUpdateService(@PathVariable("id") String hash, Tmio1ServicioPK nuevo, BindingResult bindingResult,
+			Model model) {
+
+		if (bindingResult.hasErrors()) {
 			model.addAttribute("buses", service.findAllBuses());
-			model.addAttribute("routes",service.findAllRoutes());
-			model.addAttribute("drivers",service.findAllDrivers());
+			model.addAttribute("routes", service.findAllRoutes());
+			model.addAttribute("drivers", service.findAllDrivers());
 			tempHash = hash;
 			model.addAttribute("tempHash", tempHash);
-			
+
 			return "/service/update-service";
 		}
-		
+
 		Tmio1Bus bus = service.findByBusId(nuevo.getIdBus());
 		Tmio1Conductore driver = service.findByDriverId(nuevo.getCedulaConductor());
 		Tmio1Ruta route = service.findByRouteId(nuevo.getIdRuta());
 
-		
 		Tmio1Servicio s = new Tmio1Servicio();
 		s.setId(nuevo);
 		s.setTmio1Bus(bus);
 		s.setTmio1Conductore(driver);
 		s.setTmio1Ruta(route);
 		s.setHash(s.getId().getHashId());
-	
-	
+
 		service.editService(s);
 		service.delete(tempHash);
 
 		return "redirect:/service/";
 	}
-	
+
 	@GetMapping("/service/dates")
 	public String consultarFecha(Model model) {
 		model.addAttribute("dates", new DateObject());
-		model.addAttribute("services",service.findAllIDWithoutRepeatedFechaInicio());
+		model.addAttribute("services", service.findAllIDWithoutRepeatedFechaInicio());
 		return "/service/dates-search";
 	}
-	
+
 	@GetMapping("/service/delete-service/{id}")
 	public String deleteServicio(@PathVariable("id") String hash) {
 		service.delete(hash);
 		return "redirect:/service/";
 	}
-	
+
 	@PostMapping("/service/dates")
-	public String resultadoFecha(DateObject date, Model model) {		
+	public String resultadoFecha(DateObject date, Model model) {
 		model.addAttribute("services", service.findAllByFechaInicio(date.getFechaInicio()));
 		return "/service/dates-result";
 	}

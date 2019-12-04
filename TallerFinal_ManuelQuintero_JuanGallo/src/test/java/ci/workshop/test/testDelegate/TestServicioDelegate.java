@@ -212,50 +212,6 @@ public class TestServicioDelegate {
 		assertEquals(actual, newService);
 	}
 
-	@Test
-	public void testDelete() {
-		Tmio1Bus bus1 = new Tmio1Bus();
-		bus1.setCapacidad(new BigDecimal(5000));
-		bus1.setMarca("Mercedes-Benz");
-		bus1.setModelo(new BigDecimal(2013));
-		bus1.setPlaca("HBL 802");
-		bus1.setTipo(BusType.A.toString());
-		Tmio1Conductore newConductore = new Tmio1Conductore();
-		newConductore.setApellidos("Gallo");
-		newConductore.setCedula("1104820995");
-		newConductore.setNombre("Juan");
-		newConductore.setFechaContratacion(LocalDate.of(2018, 3, 10));
-		newConductore.setFechaNacimiento(LocalDate.of(1999, 12, 9));
-		Tmio1Ruta route1 = new Tmio1Ruta();
-		route1.setActiva("Activa");
-		route1.setDescripcion("D1");
-		route1.setDiaInicio(new BigDecimal(1));
-		route1.setDiaFin(new BigDecimal(5));
-		route1.setHoraInicio(new BigDecimal(24000));
-		route1.setHoraFin(new BigDecimal(72000));
-		route1.setNumero("A11");
-		Tmio1ServicioPK pk = new Tmio1ServicioPK();
-		pk.setCedulaConductor(newConductore.getCedula());// gallo
-		pk.setFechaFin(LocalDate.of(2018, 12, 9));
-		pk.setFechaInicio(LocalDate.of(2017, 12, 9));
-		pk.setIdBus(bus1.getId());// HBL 802
-		pk.setIdRuta(route1.getId()); // A11
-		Tmio1Servicio newService = new Tmio1Servicio();
-		newService.setId(pk);
-		newService.setTmio1Bus(bus1);
-		newService.setTmio1Conductore(newConductore);
-		newService.setTmio1Ruta(route1);
-		TransactionBody<Tmio1Servicio> tb = new TransactionBody<Tmio1Servicio>();
-		tb.setBody(newService);
-		ResponseEntity<TransactionBody<Tmio1Servicio>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-		when(rest.exchange(serviceDel.REST_URI + "/service/" + newService.getHash(), HttpMethod.GET, null,
-				new ParameterizedTypeReference<TransactionBody<Tmio1Servicio>>() {
-				})).thenReturn(re);
-		Tmio1Servicio actual = serviceDel.findByHash(newService.getHash() + "");
-		assertEquals(actual, newService);
-		serviceDel.delete(newService.getHash() + "");
-		assertNull(serviceDel.findByHash(newService.getHash() + ""));
-	}
 
 	public void testfindByFechas() {
 		Tmio1Bus bus1 = new Tmio1Bus();

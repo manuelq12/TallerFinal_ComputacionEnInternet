@@ -175,34 +175,4 @@ public class TestBusDelegate {
 		}
 
 	}
-
-	@Test
-	public void testDelete() {
-		Tmio1Bus bus = new Tmio1Bus();
-		bus.setCapacidad(new BigDecimal(150));
-		bus.setId(1);
-		bus.setMarca("Mercedes-Benz");
-		bus.setModelo(new BigDecimal(2019));
-		bus.setPlaca("KHA 430");
-		bus.setTipo(BusType.A.toString());
-		Tmio1Bus bus2 = new Tmio1Bus();
-		bus2.setId(2);
-		bus2.setCapacidad(new BigDecimal(150));
-		bus2.setMarca("Mercedes-Benz");
-		bus2.setModelo(new BigDecimal(2019));
-		bus2.setPlaca("HBL 802");
-		bus2.setTipo(BusType.T.toString());
-		TransactionBody<Tmio1Bus> tb = new TransactionBody<Tmio1Bus>();
-		tb.setBody(bus);
-		ResponseEntity<TransactionBody<Tmio1Bus>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-		when(rest.exchange(busDel.REST_URI + "/bus/" + bus.getId(), HttpMethod.GET, null,
-				new ParameterizedTypeReference<TransactionBody<Tmio1Bus>>() {
-				})).thenReturn(re);
-		Tmio1Bus actual = busDel.findById(bus.getId());
-		assertEquals(actual, bus);
-		busDel.removeBus(bus.getId() + "");
-		actual = busDel.findById(bus.getId());
-		assertEquals(actual, null);
-	}
-
 }

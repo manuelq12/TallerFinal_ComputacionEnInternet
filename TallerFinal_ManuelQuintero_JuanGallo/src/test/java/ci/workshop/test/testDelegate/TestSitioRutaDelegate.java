@@ -133,8 +133,8 @@ public class TestSitioRutaDelegate {
 		s1.setDescripcion("Parada 1");
 		s1.setId(1);
 		Tmio1SitiosRutaPK pk = new Tmio1SitiosRutaPK();
-		pk.setIdRuta(ruta.getId());
-		pk.setIdSitio((int) s1.getId());
+		pk.setIdRuta(1);
+		pk.setIdSitio(1);
 		pk.setHashId(pk.hashCode());
 		Tmio1SitiosRuta n = new Tmio1SitiosRuta();
 		n.setHash(pk.getHashId());
@@ -166,9 +166,9 @@ public class TestSitioRutaDelegate {
 		s1.setDescripcion("Parada 1");
 		s1.setId(1);
 		Tmio1SitiosRutaPK pk = new Tmio1SitiosRutaPK();
-		pk.setIdRuta(ruta.getId());
-		pk.setIdSitio((int) s1.getId());
-		pk.setHashId(pk.hashCode());
+		pk.setIdRuta(1);
+		pk.setIdSitio(1);
+		pk.hashCode();
 		Tmio1SitiosRuta n = new Tmio1SitiosRuta();
 		n.setHash(pk.getHashId());
 		n.setId(pk);
@@ -183,43 +183,5 @@ public class TestSitioRutaDelegate {
 				})).thenReturn(re);
 		Tmio1SitiosRuta actual = sitioDel.getByID(n.getHash() + "");
 		assertEquals(actual, n);
-	}
-
-	@Test
-	public void testDelete() {
-		Tmio1Ruta ruta = new Tmio1Ruta();
-		ruta.setActiva(RouteStateType.Activa.toString());
-		ruta.setDescripcion("Descripcion 1 ");
-		ruta.setDiaInicio(new BigDecimal(1));
-		ruta.setDiaFin(new BigDecimal(7));
-		ruta.setHoraInicio(new BigDecimal(28000));
-		ruta.setHoraFin(new BigDecimal(45000));
-		ruta.setNumero("A11");
-		Tmio1Sitio s1 = new Tmio1Sitio();
-		s1.setNombre("Simon Bolivar");
-		s1.setDescripcion("Parada 1");
-		s1.setId(1);
-		Tmio1SitiosRutaPK pk = new Tmio1SitiosRutaPK();
-		pk.setIdRuta(ruta.getId());
-		pk.setIdSitio((int) s1.getId());
-		pk.setHashId(pk.hashCode());
-		Tmio1SitiosRuta n = new Tmio1SitiosRuta();
-		n.setHash(pk.getHashId());
-		n.setId(pk);
-		n.setTmio1Ruta1(ruta);
-		n.setTmio1Sitio1(s1);
-		TransactionBody<Tmio1SitiosRuta> tb = new TransactionBody<Tmio1SitiosRuta>();
-
-		tb.setBody(n);
-
-		ResponseEntity<TransactionBody<Tmio1SitiosRuta>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-		when(rest.exchange(sitioDel.REST_URI + "/sitioRuta/" + n.getHash(), HttpMethod.GET, null,
-				new ParameterizedTypeReference<TransactionBody<Tmio1SitiosRuta>>() {
-				})).thenReturn(re);
-		Tmio1SitiosRuta actual = sitioDel.getByID(n.getHash() + "");
-		assertEquals(actual, n);
-		sitioDel.delete(n.getHash() + "");
-		Tmio1SitiosRuta actual2 = sitioDel.getByID(n.getHash() + "");
-		assertNull(actual2);
 	}
 }

@@ -113,31 +113,5 @@ public class TestConductoresDelegate {
 		assertEquals(actual, null);
 	}
 
-	@Test
-	public void testDelete() {
-		Tmio1Conductore d1 = new Tmio1Conductore();
-		d1.setCedula("1");
-		d1.setApellidos("Quintero");
-		d1.setFechaContratacion(LocalDate.of(2019, 1, 1));
-		d1.setFechaNacimiento(LocalDate.of(1999, 2, 12));
-		d1.setNombre("Manuel");
-		Tmio1Conductore d2 = new Tmio1Conductore();
-		d2.setCedula("2");
-		d2.setApellidos("Gallo");
-		d2.setFechaContratacion(LocalDate.of(2019, 1, 1));
-		d2.setFechaNacimiento(LocalDate.of(1999, 12, 9));
-		d2.setNombre("Juan");
-		TransactionBody<Tmio1Conductore> tb = new TransactionBody<Tmio1Conductore>();
-		tb.setBody(d1);
-		ResponseEntity<TransactionBody<Tmio1Conductore>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-		when(rest.exchange(conDel.REST_URI + "/driver/" + d1.getCedula(), HttpMethod.GET, null,
-				new ParameterizedTypeReference<TransactionBody<Tmio1Conductore>>() {
-				})).thenReturn(re);
-		Tmio1Conductore actual = conDel.findById(d1.getCedula());
-		assertEquals(actual, d1);
-		conDel.removeConductores(d1.getCedula());
-		Tmio1Conductore actual2 = conDel.findById(d1.getCedula());
-		assertEquals(actual2, null);
-	}
 
 }

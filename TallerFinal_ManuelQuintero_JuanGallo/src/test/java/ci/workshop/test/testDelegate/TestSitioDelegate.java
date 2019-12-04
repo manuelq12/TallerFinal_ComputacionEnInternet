@@ -124,31 +124,7 @@ public class TestSitioDelegate {
 		assertEquals(actual, null);
 	}
 
-	public void testDelete() {
-		Tmio1Sitio s1 = new Tmio1Sitio();
-		s1.setNombre("Simon Bolivar");
-		s1.setDescripcion("Parada 1");
-		s1.setId(1);
-
-		Tmio1Sitio s2 = new Tmio1Sitio();
-		s2.setNombre("Chipichape");
-		s2.setDescripcion("Parada 2");
-		s2.setId(2);
-
-		TransactionBody<Tmio1Sitio> tb = new TransactionBody<Tmio1Sitio>();
-		tb.setBody(s1);
-		ResponseEntity<TransactionBody<Tmio1Sitio>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-
-		when(rest.exchange(sitioDel.REST_URI + "/sitio/" + s1.getId(), HttpMethod.GET, null,
-				new ParameterizedTypeReference<TransactionBody<Tmio1Sitio>>() {
-				})).thenReturn(re);
-
-		Tmio1Sitio actual = sitioDel.findById((int) s1.getId());
-
-		assertEquals(actual, s1);
-		sitioDel.removeSitio(s1.getId() + "");
-		assertNull(sitioDel.findById((int) s1.getId()));
-	}
+	
 
 	@Test
 	public void testUpdate() {

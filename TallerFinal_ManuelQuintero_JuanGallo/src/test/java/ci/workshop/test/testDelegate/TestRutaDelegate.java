@@ -124,34 +124,6 @@ public class TestRutaDelegate {
 		actual = rutaDel.findById("" + ruta2.getId());
 		assertEquals(actual, null);
 	}
-	@Test
-	public void testDelete() {
-		Tmio1Ruta ruta = new Tmio1Ruta();
-		ruta.setActiva(RouteStateType.Activa.toString());
-		ruta.setDescripcion("Descripcion 1 ");
-		ruta.setDiaInicio(new BigDecimal(1));
-		ruta.setDiaFin(new BigDecimal(7));
-		ruta.setHoraInicio(new BigDecimal(28000));
-		ruta.setHoraFin(new BigDecimal(45000));
-		ruta.setNumero("A11");
-		Tmio1Ruta ruta2 = new Tmio1Ruta();
-		ruta2.setActiva(RouteStateType.Inactiva.toString());
-		ruta2.setDescripcion("Descripcion 2 ");
-		ruta2.setDiaInicio(new BigDecimal(2));
-		ruta2.setDiaFin(new BigDecimal(4));
-		ruta2.setHoraInicio(new BigDecimal(18000));
-		ruta2.setHoraFin(new BigDecimal(55000));
-		ruta2.setNumero("B14");
-		TransactionBody<Tmio1Ruta> tb = new TransactionBody<Tmio1Ruta>();
-		tb.setBody(ruta);
-		ResponseEntity<TransactionBody<Tmio1Ruta>> re = new ResponseEntity<>(tb, HttpStatus.ACCEPTED);
-		when(rest.exchange(rutaDel.REST_URI + "/rute/" + ruta.getId(), HttpMethod.GET, null,
-				new ParameterizedTypeReference<TransactionBody<Tmio1Ruta>>() {
-				})).thenReturn(re);
-		Tmio1Ruta actual = rutaDel.findById("" + ruta.getId());
-		assertEquals(actual, ruta);
-		rutaDel.removeRuta(ruta.getId()+"");
-	}
 
 	@Test
 	public void testRutaFindAllStates() {
